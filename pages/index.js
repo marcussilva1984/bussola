@@ -360,39 +360,16 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="excerpt-body">
-                <div className="excerpt-label">Para hoje — Prefácio e Introdução · 15 min</div>
-                <div className="excerpt-text">
-                  <p>Este livro não pretende ser um relatório sobre fatos e acontecimentos, mas sim um relato de experiências pessoais — experiências que milhões de prisioneiros viveram repetidas vezes.</p>
-                  <p>É a história de um campo de concentração contada de dentro — vista pela perspectiva do prisioneiro, não pela do observador externo.</p>
-                  <p>Precisamos aprender por nós mesmos e, depois, ensinar aos que estão em desespero que o que realmente importa não é o que esperamos da vida, mas o que a vida espera de nós. Precisamos parar de perguntar sobre o sentido da vida e, em vez disso, pensar em nós mesmos como aqueles que estão sendo questionados pela vida — diariamente e a cada hora.</p>
-                  <p>Nossa resposta deve consistir não em palavras e meditação, mas em uma conduta e ação corretas. A vida, em última análise, significa assumir a responsabilidade de encontrar a resposta certa para seus problemas e cumprir as tarefas que ela continuamente nos impõe a cada indivíduo.</p>
-                </div>
-              </div>
-
               <div className="quote-block">
                 <div className="quote-text">&ldquo;A última das liberdades humanas é a escolha da própria atitude diante de qualquer conjunto de circunstâncias — a escolha do próprio caminho.&rdquo;</div>
                 <div className="quote-author">— Viktor E. Frankl</div>
               </div>
 
-              <a className="book-link" href="https://www.amazon.com.br/dp/8532611206" target="_blank" rel="noopener noreferrer">
-                <span style={{fontSize:'1.1rem'}}>📦</span>
-                <span style={{flex:1}}>Comprar: Em Busca de Sentido — Amazon.com.br</span>
+              <a className="book-link" href="/frankl.pdf" target="_blank" rel="noopener noreferrer">
+                <span style={{fontSize:'1.1rem'}}>📄</span>
+                <span style={{flex:1}}>Abrir o livro em PDF — Em Busca de Sentido</span>
                 <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
               </a>
-
-              <div className="card" style={{marginTop:'8px'}}>
-                <div className="card-label blue">Plano de Leitura</div>
-                <table className="plan-table">
-                  <thead><tr><th>Período</th><th>Ritmo</th><th>Conteúdo</th></tr></thead>
-                  <tbody>
-                    <tr className="now-blue"><td>Semanas 1–2</td><td>30 min/dia</td><td>Em Busca de Sentido</td></tr>
-                    <tr><td>Semanas 3–4</td><td>40 min/dia</td><td>Em Busca de Sentido</td></tr>
-                    <tr><td>Semanas 5–6</td><td>50 min/dia</td><td>Próximo livro</td></tr>
-                    <tr><td>Mês 2+</td><td>1h/dia</td><td>A definir juntos</td></tr>
-                  </tbody>
-                </table>
-              </div>
 
               {/* Reflexão Leitura */}
               {mounted && (
