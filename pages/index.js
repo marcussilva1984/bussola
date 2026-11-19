@@ -94,6 +94,28 @@ const FRANKL_NOTES = [
   { pages: 'pp. 58–68', tema: 'Otimismo trágico', nota: 'O último conceito: otimismo não apesar do sofrimento, mas através dele. Frankl não diz que tudo vai ficar bem — diz que mesmo quando não fica, ainda é possível escolher como reagir. "Transformar o sofrimento em realização humana." Encerre o livro perguntando: o que o sofrimento dos últimos 12 anos transformou em você que não existia antes?' },
 ]
 
+/* ── Orações de gratidão por dia da semana ──────────── */
+const GRATITUDE_PRAYERS = [
+  { dia: 'Domingo',  titulo: 'Gratidão pelo Descanso',    texto: 'Senhor, obrigado pelo domingo — pelo descanso que restaura, pela paz que renova. Que eu descanse do que é inútil e me abra para o que realmente importa. A quietude deste dia me lembra que sou mais do que o que produzo.' },
+  { dia: 'Segunda',  titulo: 'Gratidão pelo Recomeço',    texto: 'Obrigado, Deus, pela segunda-feira — pela chance de recomeçar. Que eu faça o que posso com o que tenho, onde estou. Que eu escolha o próximo passo certo mesmo sem ver o caminho inteiro.' },
+  { dia: 'Terça',    titulo: 'Gratidão pela Resiliência', texto: 'Obrigado pelo que sobrevivi. Por cada recomeço que parecia impossível e aconteceu. Que eu olhe para as minhas cicatrizes não como vergonha, mas como evidência de que continuo aqui.' },
+  { dia: 'Quarta',   titulo: 'Gratidão pelo Meio do Caminho', texto: 'A semana está pela metade e estou de pé — isso é suficiente para agradecer. Que eu não precise chegar ao fim para reconhecer o valor do que já percorri.' },
+  { dia: 'Quinta',   titulo: 'Gratidão pelas Pessoas',    texto: 'Obrigado pelas pessoas que ficaram. Pelos que disseram a verdade com cuidado. Pelos que apareceram quando precisei. Que eu honre esses vínculos com presença.' },
+  { dia: 'Sexta',    titulo: 'Gratidão pelo Que Aprendi', texto: 'Obrigado por mais uma semana. Pelo que aprendi, inclusive com os erros. Que eu encerre sem carregar o que não me pertence mais. Que eu saiba separar o que posso mudar do que preciso soltar.' },
+  { dia: 'Sábado',   titulo: 'Gratidão pela Jornada',     texto: 'Obrigado pela jornada — não pelo destino ainda, mas pelo caminho. Hoje é diferente de um ano atrás. Que eu reconheça o quanto já mudou, mesmo quando parece pouco.' },
+]
+
+/* ── Vídeos motivacionais rotativos (1 por dia) ─────── */
+const VIDEOS = [
+  { titulo: 'Viktor Frankl — Por que acreditar nas pessoas',       canal: 'TED Talks', url: 'https://www.youtube.com/watch?v=fD1512_XJEw' },
+  { titulo: 'Tony Robbins — Por que fazemos o que fazemos',        canal: 'TED Talks', url: 'https://www.youtube.com/watch?v=Cpc-t-Uwv1I' },
+  { titulo: 'Brené Brown — O poder da vulnerabilidade',            canal: 'TED Talks', url: 'https://www.youtube.com/watch?v=iCvmsMzlF7o' },
+  { titulo: 'Simon Sinek — Como grandes líderes inspiram ação',    canal: 'TED Talks', url: 'https://www.youtube.com/watch?v=u4ZoJKF_VuA' },
+  { titulo: 'Robert Waldinger — O que faz uma boa vida',           canal: 'TED Talks', url: 'https://www.youtube.com/watch?v=8KkKuTCFvzI' },
+  { titulo: 'Kelly McGonigal — Como tornar o estresse seu amigo',  canal: 'TED Talks', url: 'https://www.youtube.com/watch?v=RcGyVTAoXEU' },
+  { titulo: 'Matthew McConaughey — Discurso do Oscar',             canal: 'YouTube',   url: 'https://www.youtube.com/watch?v=wD2cVhC-63I' },
+]
+
 /* ── Daily quotes ───────────────────────────────────── */
 const QUOTES = [
   ['Um dia de cada vez.', 'Alcoólicos Anônimos'],
@@ -279,6 +301,27 @@ export default function Home() {
                 <div className="verse-ref">João 1:1</div>
               </div>
 
+              {/* Oração de gratidão do dia */}
+              {mounted && (() => {
+                const gp = GRATITUDE_PRAYERS[new Date().getDay()]
+                return (
+                  <div className="card" style={{borderLeft:'3px solid var(--rose)',marginBottom:'14px',background:'linear-gradient(135deg,rgba(240,112,128,.06),rgba(9,9,16,0))'}}>
+                    <div className="card-label rose">{gp.dia} — {gp.titulo}</div>
+                    <p style={{fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.85',color:'var(--fg)',margin:0}}>{gp.texto}</p>
+                  </div>
+                )
+              })()}
+
+              {/* Música para correr */}
+              <a className="reading-link" href="https://open.spotify.com/playlist/37i9dQZF1DWZq91oLsHZvy" target="_blank" rel="noopener noreferrer" style={{marginBottom:'14px',display:'flex',alignItems:'center',gap:'12px',padding:'14px 16px',background:'var(--surface)',borderRadius:'12px',border:'1px solid var(--border)',textDecoration:'none',color:'var(--fg)'}}>
+                <span style={{fontSize:'1.4rem'}}>🎵</span>
+                <div style={{flex:1}}>
+                  <div style={{fontWeight:600,fontSize:'.9rem',color:'var(--gold)'}}>Música para Correr</div>
+                  <div style={{fontSize:'.75rem',color:'var(--fg-muted)'}}>Spotify — Beast Mode · alta energia</div>
+                </div>
+                <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
+              </a>
+
               {quote && (
                 <div className="card card-gold quote-of-day">
                   <div className="card-label gold">Frase do Dia</div>
@@ -341,6 +384,11 @@ export default function Home() {
                 </div>
               )}
 
+              <a className="reading-link" href="https://open.spotify.com/playlist/37i9dQZF1DX3Ogo9pFvBkY" target="_blank" rel="noopener noreferrer">
+                <span className="reading-link-icon">🎵</span>
+                <span className="reading-link-text">Música para leitura — Instrumental Focus</span>
+                <span className="reading-link-arr">↗</span>
+              </a>
               <a className="reading-link" href="https://www.bibliaonline.com.br/acf/jo/1" target="_blank" rel="noopener noreferrer">
                 <span className="reading-link-icon">🌐</span>
                 <span className="reading-link-text">Abrir Bíblia completa — BíbliaOnline</span>
@@ -476,6 +524,21 @@ export default function Home() {
                 ))}
               </div>
 
+              {/* Vídeo motivacional do dia */}
+              {mounted && (() => {
+                const v = VIDEOS[getDayOfYear() % VIDEOS.length]
+                return (
+                  <a href={v.url} target="_blank" rel="noopener noreferrer" style={{display:'flex',alignItems:'center',gap:'12px',padding:'16px',background:'linear-gradient(135deg,rgba(167,139,250,.08),rgba(9,9,16,0))',borderRadius:'12px',border:'1px solid var(--border)',textDecoration:'none',color:'var(--fg)',marginBottom:'18px'}}>
+                    <span style={{fontSize:'1.8rem'}}>▶</span>
+                    <div style={{flex:1}}>
+                      <div style={{fontSize:'.72rem',color:'var(--violet)',fontWeight:600,letterSpacing:'.06em',textTransform:'uppercase',marginBottom:'4px'}}>Vídeo do Dia — {v.canal}</div>
+                      <div style={{fontWeight:600,fontSize:'.92rem',lineHeight:'1.4'}}>{v.titulo}</div>
+                    </div>
+                    <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
+                  </a>
+                )
+              })()}
+
               <div className="card" style={{borderLeft:'3px solid var(--violet)'}}>
                 <div className="card-label" style={{color:'var(--violet)'}}>O que ler</div>
                 {[
@@ -504,6 +567,15 @@ export default function Home() {
             <section className="panel">
               <div className="section-eyebrow rose-text">Dois minutos, duas vezes</div>
               <div className="section-title">Orações do Dia</div>
+
+              <a className="reading-link" href="https://open.spotify.com/playlist/37i9dQZF1DWXe9gFZP0gtP" target="_blank" rel="noopener noreferrer" style={{marginBottom:'18px',display:'flex',alignItems:'center',gap:'12px',padding:'14px 16px',background:'var(--surface)',borderRadius:'12px',border:'1px solid var(--border)',textDecoration:'none',color:'var(--fg)'}}>
+                <span style={{fontSize:'1.4rem'}}>🎵</span>
+                <div style={{flex:1}}>
+                  <div style={{fontWeight:600,fontSize:'.9rem',color:'var(--rose)'}}>Música para Meditação</div>
+                  <div style={{fontSize:'.75rem',color:'var(--fg-muted)'}}>Spotify — Calm Meditation</div>
+                </div>
+                <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
+              </a>
 
               {[
                 {
