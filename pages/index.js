@@ -334,6 +334,13 @@ export default function Home() {
                 </div>
               </div>
 
+              {BIBLE_NOTES[chapter] && (
+                <div className="card" style={{borderLeft:'3px solid var(--teal)',marginBottom:'14px',background:'linear-gradient(135deg,rgba(64,212,180,.06),rgba(9,9,16,0))'}}>
+                  <div className="card-label teal">O que prestar atenção — Cap. {chapter}</div>
+                  <p style={{fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.8',color:'var(--fg)',margin:0}}>{BIBLE_NOTES[chapter]}</p>
+                </div>
+              )}
+
               <a className="reading-link" href="https://www.bibliaonline.com.br/acf/jo/1" target="_blank" rel="noopener noreferrer">
                 <span className="reading-link-icon">🌐</span>
                 <span className="reading-link-text">Abrir Bíblia completa — BíbliaOnline</span>
@@ -402,6 +409,18 @@ export default function Home() {
                 <div className="quote-text">&ldquo;A última das liberdades humanas é a escolha da própria atitude diante de qualquer conjunto de circunstâncias — a escolha do próprio caminho.&rdquo;</div>
                 <div className="quote-author">— Viktor E. Frankl</div>
               </div>
+
+              {(() => {
+                const idx = getDayOfYear() % FRANKL_NOTES.length
+                const n = FRANKL_NOTES[idx]
+                return (
+                  <div className="card" style={{borderLeft:'3px solid var(--blue)',marginBottom:'14px',background:'linear-gradient(135deg,rgba(106,171,247,.06),rgba(9,9,16,0))'}}>
+                    <div className="card-label blue">O que prestar atenção — {n.pages}</div>
+                    <div style={{fontSize:'.72rem',color:'var(--blue)',marginBottom:'8px',fontWeight:600,letterSpacing:'.06em',textTransform:'uppercase'}}>{n.tema}</div>
+                    <p style={{fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.8',color:'var(--fg)',margin:0}}>{n.nota}</p>
+                  </div>
+                )
+              })()}
 
               <a className="book-link" href="/frankl.pdf" target="_blank" rel="noopener noreferrer">
                 <span style={{fontSize:'1.1rem'}}>📄</span>
