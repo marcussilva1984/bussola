@@ -20,6 +20,9 @@
   --rose:      #F07080;
   --rose-glow: rgba(240,112,128,.18);
   --rose-dim:  rgba(240,112,128,.10);
+  --violet:    #A78BFA;
+  --violet-glow: rgba(167,139,250,.18);
+  --violet-dim:  rgba(167,139,250,.10);
 
   --fg:        #EEE9E0;
   --fg-muted:  #7E7E9A;

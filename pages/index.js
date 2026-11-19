@@ -112,10 +112,22 @@ function getDateStr() {
 }
 
 /* ════════════════════════════════════════════════════ */
+function todayKey() {
+  const d = new Date()
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0')
+}
+function displayDate(key) {
+  const [y,m,d] = key.split('-')
+  const ms = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']
+  return d + '/' + ms[parseInt(m)-1] + '/' + y
+}
+
 export default function Home() {
   const [tab, setTab] = useState('hoje')
   const [chapter, setChapter] = useState(1)
   const [mounted, setMounted] = useState(false)
+  const [bibliaReflect, setBibliaReflect] = useState({})
+  const [leituraReflect, setLeituraReflect] = useState({})
 
   useEffect(() => {
     setMounted(true)
@@ -124,8 +136,24 @@ export default function Home() {
       const c = parseInt(localStorage.getItem('bussula-chapter'))
       if (t) setTab(t)
       if (c >= 1 && c <= TOTAL_CHAPTERS) setChapter(c)
+      const br = JSON.parse(localStorage.getItem('bussula-reflect-biblia') || '{}')
+      const lr = JSON.parse(localStorage.getItem('bussula-reflect-leitura') || '{}')
+      setBibliaReflect(br)
+      setLeituraReflect(lr)
     } catch {}
   }, [])
+
+  function saveReflect(key, val, storeKey, setter) {
+    try {
+      const saved = JSON.parse(localStorage.getItem(storeKey) || '{}')
+      saved[key] = val
+      const keys = Object.keys(saved).sort().reverse().slice(0,60)
+      const trimmed = {}
+      keys.forEach(k => { trimmed[k] = saved[k] })
+      localStorage.setItem(storeKey, JSON.stringify(trimmed))
+      setter(trimmed)
+    } catch {}
+  }
 
   function goTab(t) {
     setTab(t)
@@ -176,7 +204,7 @@ export default function Home() {
                   <div className="pillar-body">
                     <div className="pillar-name teal">Bíblia</div>
                     <div className="pillar-desc">João, Capítulo {chapter} — {ch ? ch.title.split('—')[1]?.trim() : 'Evangelho'}</div>
-                    <div className="pillar-sub">15 minutos · Semana 1 de 2</div>
+                    <div className="pillar-sub">30 minutos · Semana 1 de 2</div>
                   </div>
                   <div className="pillar-arrow">›</div>
                 </div>
@@ -185,7 +213,7 @@ export default function Home() {
                   <div className="pillar-body">
                     <div className="pillar-name blue">Leitura</div>
                     <div className="pillar-desc">Em Busca de Sentido — Prefácio</div>
-                    <div className="pillar-sub">15 minutos · Viktor Frankl</div>
+                    <div className="pillar-sub">30 minutos · Viktor Frankl</div>
                   </div>
                   <div className="pillar-arrow">›</div>
                 </div>
@@ -231,9 +259,9 @@ export default function Home() {
 
               <div className="chapter-nav-row">
                 <div className="chapter-info">Cap. {chapter} de {TOTAL_CHAPTERS}</div>
-                <div className="reading-nav">
-                  <button className="nav-btn" onClick={() => goChapter(-1)} disabled={chapter === 1}>‹</button>
-                  <button className="nav-btn" onClick={() => goChapter(1)} disabled={chapter === TOTAL_CHAPTERS}>›</button>
+                <div style={{display:'flex',gap:'8px'}}>
+                  <button className="nav-btn" style={{borderRadius:'10px',width:'auto',padding:'0 14px',fontSize:'.8rem',fontWeight:600}} onClick={() => goChapter(-1)} disabled={chapter === 1}>‹ Anterior</button>
+                  <button className="nav-btn" style={{borderRadius:'10px',width:'auto',padding:'0 14px',fontSize:'.8rem',fontWeight:600}} onClick={() => goChapter(1)} disabled={chapter === TOTAL_CHAPTERS}>Próximo ›</button>
                 </div>
               </div>
 
@@ -284,13 +312,33 @@ export default function Home() {
                 <table className="plan-table">
                   <thead><tr><th>Período</th><th>Ritmo</th><th>Capítulos</th></tr></thead>
                   <tbody>
-                    <tr className="now"><td>Semanas 1–2</td><td>15 min/dia</td><td>João 1–14</td></tr>
-                    <tr><td>Semanas 3–4</td><td>25 min/dia</td><td>João 15–21</td></tr>
-                    <tr><td>Semanas 5–6</td><td>40 min/dia</td><td>Marcos 1–8</td></tr>
+                    <tr className="now"><td>Semanas 1–2</td><td>30 min/dia</td><td>João 1–14</td></tr>
+                    <tr><td>Semanas 3–4</td><td>40 min/dia</td><td>João 15–21</td></tr>
+                    <tr><td>Semanas 5–6</td><td>50 min/dia</td><td>Marcos 1–8</td></tr>
                     <tr><td>Mês 2+</td><td>1h/dia</td><td>Marcos 9–16 e além</td></tr>
                   </tbody>
                 </table>
               </div>
+
+              {/* Reflexão Bíblia */}
+              {mounted && (
+                <div className="card" style={{borderLeft:'3px solid var(--teal)',marginBottom:'14px'}}>
+                  <div className="card-label teal">Minha Reflexão — {displayDate(todayKey())}</div>
+                  <div style={{fontSize:'.8rem',color:'var(--fg-muted)',marginBottom:'10px'}}>O que esse capítulo te disse? O que ficou? Escreva livremente — só para você.</div>
+                  <textarea
+                    defaultValue={bibliaReflect[todayKey()] || ''}
+                    placeholder="Escreva aqui sua reflexão do dia…"
+                    onChange={e => saveReflect(todayKey(), e.target.value, 'bussula-reflect-biblia', setBibliaReflect)}
+                    style={{width:'100%',minHeight:'130px',background:'var(--surface2)',border:'1px solid var(--border2)',borderRadius:'10px',color:'var(--fg)',fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.75',padding:'14px',resize:'vertical',outline:'none'}}
+                  />
+                  {Object.keys(bibliaReflect).filter(k => k !== todayKey() && bibliaReflect[k].trim()).sort().reverse().slice(0,5).map(k => (
+                    <div key={k} style={{marginTop:'10px',padding:'12px',background:'var(--surface2)',borderRadius:'10px',borderLeft:'2px solid var(--teal)'}}>
+                      <div style={{fontSize:'.68rem',color:'var(--fg-dim)',marginBottom:'6px'}}>{displayDate(k)}</div>
+                      <div style={{fontSize:'.88rem',color:'var(--fg-muted)',lineHeight:'1.6'}}>{bibliaReflect[k]}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </section>
           )}
 
@@ -338,12 +386,81 @@ export default function Home() {
                 <table className="plan-table">
                   <thead><tr><th>Período</th><th>Ritmo</th><th>Conteúdo</th></tr></thead>
                   <tbody>
-                    <tr className="now-blue"><td>Semanas 1–2</td><td>15 min/dia</td><td>Em Busca de Sentido</td></tr>
-                    <tr><td>Semanas 3–4</td><td>25 min/dia</td><td>Em Busca de Sentido</td></tr>
-                    <tr><td>Semanas 5–6</td><td>40 min/dia</td><td>Próximo livro</td></tr>
+                    <tr className="now-blue"><td>Semanas 1–2</td><td>30 min/dia</td><td>Em Busca de Sentido</td></tr>
+                    <tr><td>Semanas 3–4</td><td>40 min/dia</td><td>Em Busca de Sentido</td></tr>
+                    <tr><td>Semanas 5–6</td><td>50 min/dia</td><td>Próximo livro</td></tr>
                     <tr><td>Mês 2+</td><td>1h/dia</td><td>A definir juntos</td></tr>
                   </tbody>
                 </table>
+              </div>
+
+              {/* Reflexão Leitura */}
+              {mounted && (
+                <div className="card" style={{borderLeft:'3px solid var(--blue)',marginTop:'14px'}}>
+                  <div className="card-label blue">Minha Reflexão — {displayDate(todayKey())}</div>
+                  <div style={{fontSize:'.8rem',color:'var(--fg-muted)',marginBottom:'10px'}}>O que esse trecho te tocou? Que ideia você leva para hoje?</div>
+                  <textarea
+                    defaultValue={leituraReflect[todayKey()] || ''}
+                    placeholder="Escreva aqui sua reflexão da leitura…"
+                    onChange={e => saveReflect(todayKey(), e.target.value, 'bussula-reflect-leitura', setLeituraReflect)}
+                    style={{width:'100%',minHeight:'120px',background:'var(--surface2)',border:'1px solid var(--border2)',borderRadius:'10px',color:'var(--fg)',fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.75',padding:'14px',resize:'vertical',outline:'none'}}
+                  />
+                  {Object.keys(leituraReflect).filter(k => k !== todayKey() && leituraReflect[k].trim()).sort().reverse().slice(0,5).map(k => (
+                    <div key={k} style={{marginTop:'10px',padding:'12px',background:'var(--surface2)',borderRadius:'10px',borderLeft:'2px solid var(--blue)'}}>
+                      <div style={{fontSize:'.68rem',color:'var(--fg-dim)',marginBottom:'6px'}}>{displayDate(k)}</div>
+                      <div style={{fontSize:'.88rem',color:'var(--fg-muted)',lineHeight:'1.6'}}>{leituraReflect[k]}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* INSPIRAÇÃO */}
+          {tab === 'inspiracao' && (
+            <section className="panel">
+              <div className="section-eyebrow" style={{color:'var(--violet)'}}>Sua bússola</div>
+              <div className="section-title">Inspiração</div>
+
+              <div className="card" style={{borderLeft:'3px solid var(--violet)',marginBottom:'18px'}}>
+                <div className="card-label" style={{color:'var(--violet)'}}>O que fazer</div>
+                {[
+                  {icon:'🏃', title:'Correr ou caminhar', desc:'30–45 min, qualquer horário. Movimento muda o estado mental antes do café da manhã.'},
+                  {icon:'🤝', title:'Reunião do AA', desc:'Presença diária, mesmo quando está bem. A comunidade é o antídoto para o isolamento.'},
+                  {icon:'🙏', title:'Meditação ou silêncio', desc:'10–15 min de manhã. Pode ser só sentar, respirar, e não fazer nada. Isso já é prática.'},
+                  {icon:'🤲', title:'Trabalho voluntário', desc:'Ajudar outros é um dos pilares da recuperação. Hospitais, NA, AA, CDRJ — há vários caminhos.'},
+                  {icon:'🎓', title:'Voltar à faculdade em 2025', desc:'Psicologia ou dependência química — o mestrado começa com uma matrícula. Pesquise uma disciplina por semana.'},
+                  {icon:'📔', title:'Diário de gratidão', desc:'3 coisas boas antes de dormir. Treina o cérebro para notar o que funcionou, não só o que falhou.'},
+                ].map((item, i) => (
+                  <div key={i} className="inspire-item" style={{marginTop: i===0?'4px':'12px'}}>
+                    <span className="inspire-icon">{item.icon}</span>
+                    <div>
+                      <div className="inspire-title">{item.title}</div>
+                      <div className="inspire-desc">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="card" style={{borderLeft:'3px solid var(--violet)'}}>
+                <div className="card-label" style={{color:'var(--violet)'}}>O que ler</div>
+                {[
+                  {n:'01', title:'Em Busca de Sentido', author:'Viktor E. Frankl', why:'Você já está lendo. O livro certo na hora certa.'},
+                  {n:'02', title:'As 12 Regras para a Vida', author:'Jordan B. Peterson', why:'Ordem prática para o caos pessoal — escrito por um psicólogo clínico, sem floreios.'},
+                  {n:'03', title:'O Monge e o Executivo', author:'James C. Hunter', why:'Liderança de si mesmo antes de liderar outros. Leitura rápida, impacto duradouro.'},
+                  {n:'04', title:'Os Quatro Compromissos', author:'Don Miguel Ruiz', why:'Sabedoria tolteca condensada em quatro princípios. Curto e profundo.'},
+                  {n:'05', title:'Alcoólicos Anônimos — O Livro Grande', author:'Bill Wilson et al.', why:'O livro base do AA. Releio sempre que necessário — não precisa ser linear.'},
+                  {n:'06', title:'O Poder do Hábito', author:'Charles Duhigg', why:'Entender como hábitos se formam ajuda a construir os certos e quebrar os errados.'},
+                ].map((book, i) => (
+                  <div key={i} className="booklist-item">
+                    <div className="booklist-num">{book.n}</div>
+                    <div>
+                      <div className="booklist-title">{book.title}</div>
+                      <div className="booklist-author">{book.author}</div>
+                      <div className="booklist-why">{book.why}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
           )}
@@ -394,10 +511,11 @@ export default function Home() {
         {/* ── TAB NAV ── */}
         <nav className="tab-nav">
           {[
-            { id: 'hoje',    icon: '◈', label: 'Hoje' },
-            { id: 'biblia',  icon: '✦', label: 'Bíblia' },
-            { id: 'leitura', icon: '◎', label: 'Leitura' },
-            { id: 'oracao',  icon: '◉', label: 'Oração' },
+            { id: 'hoje',       icon: '◈', label: 'Hoje' },
+            { id: 'biblia',     icon: '✦', label: 'Bíblia' },
+            { id: 'leitura',    icon: '◎', label: 'Leitura' },
+            { id: 'oracao',     icon: '◉', label: 'Oração' },
+            { id: 'inspiracao', icon: '✧', label: 'Inspiração' },
           ].map(t => (
             <button
               key={t.id}
@@ -468,10 +586,11 @@ export default function Home() {
         }
         .tab-icon { font-size: 1.2rem; transition: transform 0.2s; }
         .tab-btn.active .tab-icon { transform: scale(1.14); }
-        .tab-btn.hoje   { color: var(--gold); }
-        .tab-btn.biblia { color: var(--teal); }
-        .tab-btn.leitura{ color: var(--blue); }
-        .tab-btn.oracao { color: var(--rose); }
+        .tab-btn.hoje       { color: var(--gold); }
+        .tab-btn.biblia     { color: var(--teal); }
+        .tab-btn.leitura    { color: var(--blue); }
+        .tab-btn.oracao     { color: var(--rose); }
+        .tab-btn.inspiracao { color: var(--violet); }
 
         /* TYPOGRAPHY */
         .section-eyebrow { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 7px; }
@@ -579,6 +698,19 @@ export default function Home() {
         .plan-table td:first-child { color: var(--fg); font-weight: 500; padding-right: 12px; white-space: nowrap; }
         .plan-table tr.now td:first-child { color: var(--teal); font-weight: 600; }
         .plan-table tr.now-blue td:first-child { color: var(--blue); font-weight: 600; }
+
+        /* INSPIRAÇÃO */
+        .inspire-item { display: flex; align-items: flex-start; gap: 14px; }
+        .inspire-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; background: rgba(167,139,250,.12); }
+        .inspire-title { font-weight: 600; font-size: .9rem; color: var(--fg); margin-bottom: 2px; }
+        .inspire-desc { font-size: .8rem; color: var(--fg-muted); line-height: 1.5; }
+
+        .booklist-item { display: flex; align-items: flex-start; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-top: 8px; }
+        .booklist-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .booklist-num { font-size: .68rem; color: var(--violet); font-weight: 700; letter-spacing: .06em; padding-top: 2px; min-width: 22px; }
+        .booklist-title { font-weight: 600; font-size: .9rem; color: var(--fg); }
+        .booklist-author { font-size: .75rem; color: var(--fg-muted); margin: 1px 0 4px; }
+        .booklist-why { font-size: .78rem; color: var(--fg-dim); line-height: 1.5; }
       `}</style>
     </>
   )
