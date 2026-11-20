@@ -116,6 +116,38 @@ const VIDEOS = [
   { titulo: 'Matthew McConaughey — Discurso do Oscar',             canal: 'YouTube',   url: 'https://www.youtube.com/watch?v=wD2cVhC-63I' },
 ]
 
+/* ── Reflexões da Recuperação (original, inspiradas nos 12 Passos) */
+const AA_REFLECTIONS = [
+  { tema: 'Impotência', passo: 'Passo 1', reflexao: 'Admitir que perdi o controle não foi fraqueza — foi o primeiro ato de honestidade real. Enquanto fingi que controlava, o caos controlava tudo. A rendição abriu a porta que a teimosia mantinha trancada. Hoje posso começar de onde estou, não de onde gostaria de estar.' },
+  { tema: 'Esperança', passo: 'Passo 2', reflexao: 'Acreditar que algo maior do que eu pode restaurar minha sanidade não exige nome, religião ou certeza. Exige só uma coisa: parar de achar que tenho que resolver tudo sozinho. A esperança não é otimismo ingênuo — é a decisão de continuar quando a lógica diz para parar.' },
+  { tema: 'Decisão', passo: 'Passo 3', reflexao: 'Entregar a vontade e a vida a um Poder Superior é uma decisão diária, não um momento único. Todo dia acordo e posso escolher: vou tentar controlar o incontrolável ou vou fazer minha parte e entregar o resto? A entrega não é passividade — é sabedoria prática.' },
+  { tema: 'Inventário', passo: 'Passo 4', reflexao: 'Olhar para mim mesmo com honestidade — sem maquiar e sem destruir. O inventário moral não é punição, é mapa. Preciso saber onde estou para decidir para onde vou. Os defeitos que mais resisto ver são exatamente os que mais precisam de luz.' },
+  { tema: 'Admissão', passo: 'Passo 5', reflexao: 'Dizer em voz alta, para outro ser humano, a natureza exata dos meus erros quebra o isolamento que a vergonha constrói. Não é sobre ser julgado — é sobre ser visto. E descobrir que o outro não saiu correndo muda alguma coisa por dentro que nenhum pensamento sozinho muda.' },
+  { tema: 'Disposição', passo: 'Passo 6', reflexao: 'Estar inteiramente pronto para que Deus remova os defeitos de caráter. "Inteiramente" é a palavra-chave. Não é "quase pronto" ou "pronto quando for conveniente." É reconhecer que alguns defeitos eu carrego por escolha, porque me protegem. A pergunta é: essa proteção ainda serve, ou já virou prisão?' },
+  { tema: 'Humildade', passo: 'Passo 7', reflexao: 'Humildade não é pensar menos de si — é pensar menos em si. Pedir humildemente a remoção dos defeitos é aceitar que a transformação é um processo, não um evento. Hoje não preciso ser perfeito. Preciso estar disposto. A disposição abre espaço; a perfeição fecha.' },
+  { tema: 'Reparação', passo: 'Passo 8', reflexao: 'Fazer a lista das pessoas que magoei exige coragem e memória honesta. Algumas pessoas dessa lista eu preferiria esquecer. Outras, eu preferiria que me esquecessem. Mas a recuperação não funciona por conveniência — funciona por verdade. E a verdade começa com um nome de cada vez.' },
+  { tema: 'Restituição', passo: 'Passo 9', reflexao: 'Reparar diretamente os danos causados, exceto quando isso prejudicaria outros. A reparação não é para limpar minha consciência — é para restaurar o que quebrei. Às vezes a melhor reparação é mudar de comportamento. Às vezes é um pedido de desculpas. E às vezes é o silêncio respeitoso da distância.' },
+  { tema: 'Vigilância', passo: 'Passo 10', reflexao: 'Continuar fazendo o inventário pessoal e, quando errar, admitir prontamente. Esse é o passo que transforma recuperação em modo de vida. Não é sobre nunca errar — é sobre não deixar o erro acumular. Uma conta pequena é fácil de pagar. Uma dívida de anos esmaga.' },
+  { tema: 'Conexão', passo: 'Passo 11', reflexao: 'Oração e meditação para melhorar o contato consciente com Deus. Não precisa ser eloquente. Não precisa ser longo. Pode ser: "Me ajuda hoje." Pode ser silêncio. O que importa é a intenção de se conectar com algo maior do que o meu próximo pensamento ansioso.' },
+  { tema: 'Serviço', passo: 'Passo 12', reflexao: 'Tendo tido um despertar espiritual, levar a mensagem e praticar esses princípios em todos os assuntos. Ajudar o outro não é caridade — é parte da minha cura. Quando conto minha história para quem precisa ouvir, eu me lembro de onde vim. E lembrar de onde vim é o que me impede de voltar.' },
+]
+
+/* ── Sabedoria prática da recuperação (inspirado em Bill W.) ── */
+const BILL_WISDOM = [
+  { tema: 'Primeiro passo', texto: 'O primeiro gole é o que importa. Não o décimo, não o vigésimo. É o primeiro. Toda recaída começa com uma decisão que parecia pequena. A vigilância não é paranoia — é respeito pela doença. E a doença é paciente. Ela espera.' },
+  { tema: 'Solidão', texto: 'O isolamento é o campo de treinamento da recaída. Quando me afasto das pessoas, das reuniões, do convívio — a voz que diz "desta vez será diferente" fica mais alta. A companhia humana imperfeita é melhor do que a solidão perfeita do meu pensamento doente.' },
+  { tema: 'Gratidão', texto: 'Gratidão e miséria não moram na mesma casa. Quando começo o dia agradecendo — pelo café, pela cama, por ter acordado sóbrio — o dia inteiro muda de temperatura. Não é pensamento positivo barato. É uma prática de redirecionamento da atenção.' },
+  { tema: 'Aceitação', texto: 'Aceitação não é concordância. Aceitar a realidade como ela é não significa que aprovo. Significa que paro de gastar energia lutando contra o que já aconteceu. E essa energia economizada é o que uso para mudar o que posso.' },
+  { tema: 'Ressentimento', texto: 'Guardar ressentimento é como tomar veneno e esperar que o outro morra. Já fiz isso — carreguei mágoas por anos como se fossem troféus. A liberdade não veio do perdão bonito. Veio da exaustão. Cansei de carregar peso que não era meu.' },
+  { tema: 'Um dia de cada vez', texto: 'Não preciso ficar sóbrio para sempre. Preciso ficar sóbrio hoje. "Para sempre" é um conceito que paralisa. "Hoje" é um compromisso que posso cumprir. E amanhã, quando chegar, vai ser outro "hoje." É assim que anos de sobriedade se constroem: de um dia de cada vez.' },
+  { tema: 'Humildade real', texto: 'Humildade não é andar de cabeça baixa. É saber exatamente o meu tamanho — nem maior, nem menor. É pedir ajuda sem vergonha e oferecer ajuda sem arrogância. Levou tempo para eu aprender que "não sei" é uma das frases mais corajosas que existem.' },
+  { tema: 'Ação', texto: 'Pensamento não muda pensamento. Ação muda pensamento. Posso ficar semanas pensando em ir à reunião. Ou posso ir. Posso analisar se devo pedir desculpas. Ou posso pedir. O programa funciona para quem trabalha o programa. E trabalhar exige mover os pés.' },
+  { tema: 'Progresso', texto: 'Progresso, não perfeição. Se eu esperar estar perfeito para agir, nunca vou agir. Se eu esperar me sentir pronto para mudar, nunca vou mudar. O progresso é sujo, lento, cheio de erros. E é o único caminho real. O outro — a perfeição — não existe.' },
+  { tema: 'Padrinho', texto: 'Ninguém se recupera sozinho. O padrinho não é guru, terapeuta nem juiz. É alguém que já passou pelo que estou passando e sobreviveu. Quando compartilho minha verdade com alguém que entende, o peso se divide. E peso dividido é peso suportável.' },
+  { tema: 'Recaída', texto: 'A recaída não começa no gole. Começa semanas antes — no isolamento, na irritabilidade, na mentira "pequena," no "eu resolvo sozinho." Reconhecer os sinais é mais importante do que lutar contra eles. Quando sei que estou em terreno perigoso, posso pedir ajuda antes de cair.' },
+  { tema: 'Despertar', texto: 'O despertar espiritual não é um raio de luz. Para a maioria de nós, é lento, gradual, e quase imperceptível enquanto acontece. Um dia olho para trás e percebo: estou diferente. Reajo diferente. Escolho diferente. E esse "diferente" não foi um evento — foi uma construção diária.' },
+]
+
 /* ── Daily quotes ───────────────────────────────────── */
 const QUOTES = [
   ['Um dia de cada vez.', 'Alcoólicos Anônimos'],
@@ -150,6 +182,17 @@ const QUOTES = [
   ['Amanhã começa hoje.', 'Desconhecido'],
 ]
 
+/* ── Mood emojis for inventory ─────────────────────── */
+const MOODS = [
+  { emoji: '😊', label: 'Bem' },
+  { emoji: '😐', label: 'Neutro' },
+  { emoji: '😔', label: 'Triste' },
+  { emoji: '😤', label: 'Irritado' },
+  { emoji: '😰', label: 'Ansioso' },
+  { emoji: '🙏', label: 'Grato' },
+  { emoji: '💪', label: 'Forte' },
+]
+
 /* ── Helpers ────────────────────────────────────────── */
 function getDayOfYear() {
   const now = new Date()
@@ -171,23 +214,42 @@ function getDateStr() {
   return `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]}`
 }
 
-/* ════════════════════════════════════════════════════ */
 function todayKey() {
   const d = new Date()
   return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0')
 }
+
 function displayDate(key) {
   const [y,m,d] = key.split('-')
   const ms = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']
   return d + '/' + ms[parseInt(m)-1] + '/' + y
 }
 
+function weekdayName(key) {
+  const days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado']
+  return days[new Date(key + 'T12:00:00').getDay()]
+}
+
+function getWeekKeys() {
+  const keys = []
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date()
+    d.setDate(d.getDate() - i)
+    keys.push(d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'))
+  }
+  return keys
+}
+
+/* ════════════════════════════════════════════════════ */
 export default function Home() {
   const [tab, setTab] = useState('hoje')
   const [chapter, setChapter] = useState(1)
   const [mounted, setMounted] = useState(false)
   const [bibliaReflect, setBibliaReflect] = useState({})
   const [leituraReflect, setLeituraReflect] = useState({})
+  const [inventory, setInventory] = useState({})
+  const [invForm, setInvForm] = useState({ acertos: '', erros: '', humor: '', gratidao: '' })
+  const [invView, setInvView] = useState('form')
 
   useEffect(() => {
     setMounted(true)
@@ -198,8 +260,13 @@ export default function Home() {
       if (c >= 1 && c <= TOTAL_CHAPTERS) setChapter(c)
       const br = JSON.parse(localStorage.getItem('bussula-reflect-biblia') || '{}')
       const lr = JSON.parse(localStorage.getItem('bussula-reflect-leitura') || '{}')
+      const inv = JSON.parse(localStorage.getItem('bussula-inventory') || '{}')
       setBibliaReflect(br)
       setLeituraReflect(lr)
+      setInventory(inv)
+      if (inv[todayKey()]) {
+        setInvForm(inv[todayKey()])
+      }
     } catch {}
   }, [])
 
@@ -215,6 +282,24 @@ export default function Home() {
     } catch {}
   }
 
+  function saveInventory(form) {
+    try {
+      const saved = JSON.parse(localStorage.getItem('bussula-inventory') || '{}')
+      saved[todayKey()] = form
+      const keys = Object.keys(saved).sort().reverse().slice(0,90)
+      const trimmed = {}
+      keys.forEach(k => { trimmed[k] = saved[k] })
+      localStorage.setItem('bussula-inventory', JSON.stringify(trimmed))
+      setInventory(trimmed)
+    } catch {}
+  }
+
+  function updateInvField(field, val) {
+    const next = { ...invForm, [field]: val }
+    setInvForm(next)
+    saveInventory(next)
+  }
+
   function goTab(t) {
     setTab(t)
     try { localStorage.setItem('bussula-tab', t) } catch {}
@@ -228,21 +313,24 @@ export default function Home() {
 
   const quote = QUOTES[getDayOfYear() % QUOTES.length]
   const ch = CHAPTERS[chapter]
+  const aaRef = AA_REFLECTIONS[getDayOfYear() % AA_REFLECTIONS.length]
+  const billRef = BILL_WISDOM[getDayOfYear() % BILL_WISDOM.length]
+  const weekKeys = getWeekKeys()
 
   return (
     <>
       <Head>
-        <title>Bússola</title>
+        <title>Bússola de Recuperação</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#090910" />
+        <meta name="theme-color" content="#0a0a12" />
       </Head>
 
       <div className="app">
         {/* ── HEADER ── */}
         <header className="header">
           <div className="header-left">
-            <span className="header-title">✦ Bússola</span>
-            <span className="header-sub">corpo · mente · espírito</span>
+            <span className="header-title">Bússola</span>
+            <span className="header-sub">recuperação · fé · propósito</span>
           </div>
           {mounted && <span className="header-date">{getDateStr()}</span>}
         </header>
@@ -250,7 +338,7 @@ export default function Home() {
         {/* ── CONTENT ── */}
         <main className="content">
 
-          {/* HOJE */}
+          {/* ═══ HOJE ═══ */}
           {tab === 'hoje' && (
             <section className="panel">
               <div className="today-greeting">
@@ -272,8 +360,26 @@ export default function Home() {
                   <div className="pillar-icon blue">📚</div>
                   <div className="pillar-body">
                     <div className="pillar-name blue">Leitura</div>
-                    <div className="pillar-desc">Em Busca de Sentido — Prefácio</div>
-                    <div className="pillar-sub">30 minutos · Viktor Frankl</div>
+                    <div className="pillar-desc">Em Busca de Sentido — Viktor Frankl</div>
+                    <div className="pillar-sub">30 minutos · Leitura guiada</div>
+                  </div>
+                  <div className="pillar-arrow">›</div>
+                </div>
+                <div className="pillar-item" onClick={() => goTab('oracao')}>
+                  <div className="pillar-icon rose">🙏</div>
+                  <div className="pillar-body">
+                    <div className="pillar-name rose">Oração + AA</div>
+                    <div className="pillar-desc">Orações, reflexão diária e Na Opinião de Bill</div>
+                    <div className="pillar-sub">Manhã e noite — dois minutos cada</div>
+                  </div>
+                  <div className="pillar-arrow">›</div>
+                </div>
+                <div className="pillar-item" onClick={() => goTab('inventario')}>
+                  <div className="pillar-icon amber">📝</div>
+                  <div className="pillar-body">
+                    <div className="pillar-name amber">Inventário</div>
+                    <div className="pillar-desc">Passo 10 — O que acertei, o que errei</div>
+                    <div className="pillar-sub">5 minutos · Exame de consciência do dia</div>
                   </div>
                   <div className="pillar-arrow">›</div>
                 </div>
@@ -285,16 +391,32 @@ export default function Home() {
                     <div className="pillar-sub">No ritmo que o corpo pede hoje</div>
                   </div>
                 </div>
-                <div className="pillar-item" onClick={() => goTab('oracao')}>
-                  <div className="pillar-icon rose">🙏</div>
-                  <div className="pillar-body">
-                    <div className="pillar-name rose">Oração</div>
-                    <div className="pillar-desc">Manhã e noite — dois minutos cada</div>
-                    <div className="pillar-sub">Para pedir, agradecer ou só estar</div>
-                  </div>
-                  <div className="pillar-arrow">›</div>
-                </div>
               </div>
+
+              {/* Vídeo motivacional do dia */}
+              {mounted && (() => {
+                const v = VIDEOS[getDayOfYear() % VIDEOS.length]
+                return (
+                  <a href={v.url} target="_blank" rel="noopener noreferrer" className="video-link">
+                    <span className="video-play">▶</span>
+                    <div style={{flex:1}}>
+                      <div className="video-label">Vídeo do Dia — {v.canal}</div>
+                      <div className="video-title">{v.titulo}</div>
+                    </div>
+                    <span className="link-arrow">↗</span>
+                  </a>
+                )
+              })()}
+
+              {/* Música para correr — YouTube Music */}
+              <a className="music-link" href="https://music.youtube.com/search?q=treino+corrida+alta+energia+motivação" target="_blank" rel="noopener noreferrer">
+                <span className="music-icon">🎵</span>
+                <div style={{flex:1}}>
+                  <div className="music-title gold-text">Música para Correr</div>
+                  <div className="music-sub">YouTube Music — Alta energia</div>
+                </div>
+                <span className="link-arrow">↗</span>
+              </a>
 
               <div className="verse-card">
                 <div className="verse-text">&ldquo;No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus.&rdquo;</div>
@@ -305,26 +427,16 @@ export default function Home() {
               {mounted && (() => {
                 const gp = GRATITUDE_PRAYERS[new Date().getDay()]
                 return (
-                  <div className="card" style={{borderLeft:'3px solid var(--rose)',marginBottom:'14px',background:'linear-gradient(135deg,rgba(240,112,128,.06),rgba(9,9,16,0))'}}>
-                    <div className="card-label rose">{gp.dia} — {gp.titulo}</div>
-                    <p style={{fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.85',color:'var(--fg)',margin:0}}>{gp.texto}</p>
+                  <div className="card card-rose-border">
+                    <div className="card-label rose-text">{gp.dia} — {gp.titulo}</div>
+                    <p className="serif-body">{gp.texto}</p>
                   </div>
                 )
               })()}
 
-              {/* Música para correr */}
-              <a className="reading-link" href="https://open.spotify.com/playlist/37i9dQZF1DWZq91oLsHZvy" target="_blank" rel="noopener noreferrer" style={{marginBottom:'14px',display:'flex',alignItems:'center',gap:'12px',padding:'14px 16px',background:'var(--surface)',borderRadius:'12px',border:'1px solid var(--border)',textDecoration:'none',color:'var(--fg)'}}>
-                <span style={{fontSize:'1.4rem'}}>🎵</span>
-                <div style={{flex:1}}>
-                  <div style={{fontWeight:600,fontSize:'.9rem',color:'var(--gold)'}}>Música para Correr</div>
-                  <div style={{fontSize:'.75rem',color:'var(--fg-muted)'}}>Spotify — Beast Mode · alta energia</div>
-                </div>
-                <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
-              </a>
-
               {quote && (
                 <div className="card card-gold quote-of-day">
-                  <div className="card-label gold">Frase do Dia</div>
+                  <div className="card-label gold-text">Frase do Dia</div>
                   <div className="daily-quote">&ldquo;{quote[0]}&rdquo;</div>
                   <div className="daily-author">— {quote[1]}</div>
                 </div>
@@ -332,7 +444,7 @@ export default function Home() {
             </section>
           )}
 
-          {/* BÍBLIA */}
+          {/* ═══ BÍBLIA ═══ */}
           {tab === 'biblia' && (
             <section className="panel">
               <div className="section-eyebrow teal-text">Palavra do Dia</div>
@@ -341,8 +453,8 @@ export default function Home() {
               <div className="chapter-nav-row">
                 <div className="chapter-info">Cap. {chapter} de {TOTAL_CHAPTERS}</div>
                 <div style={{display:'flex',gap:'8px'}}>
-                  <button className="nav-btn" style={{borderRadius:'10px',width:'auto',padding:'0 14px',fontSize:'.8rem',fontWeight:600}} onClick={() => goChapter(-1)} disabled={chapter === 1}>‹ Anterior</button>
-                  <button className="nav-btn" style={{borderRadius:'10px',width:'auto',padding:'0 14px',fontSize:'.8rem',fontWeight:600}} onClick={() => goChapter(1)} disabled={chapter === TOTAL_CHAPTERS}>Próximo ›</button>
+                  <button className="nav-btn-pill" onClick={() => goChapter(-1)} disabled={chapter === 1}>‹ Anterior</button>
+                  <button className="nav-btn-pill" onClick={() => goChapter(1)} disabled={chapter === TOTAL_CHAPTERS}>Próximo ›</button>
                 </div>
               </div>
 
@@ -373,35 +485,38 @@ export default function Home() {
                   <span>Cap. {chapter} / {TOTAL_CHAPTERS}</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress-fill teal" style={{width: `${(chapter/TOTAL_CHAPTERS*100).toFixed(1)}%`}} />
+                  <div className="progress-fill teal-bg" style={{width: `${(chapter/TOTAL_CHAPTERS*100).toFixed(1)}%`}} />
                 </div>
               </div>
 
               {BIBLE_NOTES[chapter] && (
-                <div className="card" style={{borderLeft:'3px solid var(--teal)',marginBottom:'14px',background:'linear-gradient(135deg,rgba(64,212,180,.06),rgba(9,9,16,0))'}}>
-                  <div className="card-label teal">O que prestar atenção — Cap. {chapter}</div>
-                  <p style={{fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.8',color:'var(--fg)',margin:0}}>{BIBLE_NOTES[chapter]}</p>
+                <div className="card card-teal-border card-teal-bg">
+                  <div className="card-label teal-text">O que prestar atenção — Cap. {chapter}</div>
+                  <p className="serif-body">{BIBLE_NOTES[chapter]}</p>
                 </div>
               )}
 
-              <a className="reading-link" href="https://open.spotify.com/playlist/37i9dQZF1DX3Ogo9pFvBkY" target="_blank" rel="noopener noreferrer">
-                <span className="reading-link-icon">🎵</span>
-                <span className="reading-link-text">Música para leitura — Instrumental Focus</span>
-                <span className="reading-link-arr">↗</span>
+              <a className="music-link" href="https://music.youtube.com/search?q=instrumental+foco+leitura+calmo" target="_blank" rel="noopener noreferrer">
+                <span className="music-icon">🎵</span>
+                <div style={{flex:1}}>
+                  <div className="music-title teal-text">Música para Leitura</div>
+                  <div className="music-sub">YouTube Music — Instrumental Focus</div>
+                </div>
+                <span className="link-arrow">↗</span>
               </a>
-              <a className="reading-link" href="https://www.bibliaonline.com.br/acf/jo/1" target="_blank" rel="noopener noreferrer">
-                <span className="reading-link-icon">🌐</span>
-                <span className="reading-link-text">Abrir Bíblia completa — BíbliaOnline</span>
-                <span className="reading-link-arr">↗</span>
+              <a className="ext-link" href="https://www.bibliaonline.com.br/acf/jo/1" target="_blank" rel="noopener noreferrer">
+                <span className="ext-link-icon">🌐</span>
+                <span className="ext-link-text">Abrir Bíblia completa — BíbliaOnline</span>
+                <span className="link-arrow">↗</span>
               </a>
-              <a className="reading-link" href="https://www.bible.com/pt/bible/1608/JHN.1.ARC" target="_blank" rel="noopener noreferrer">
-                <span className="reading-link-icon">📱</span>
-                <span className="reading-link-text">YouVersion — app de bíblia (planos de leitura)</span>
-                <span className="reading-link-arr">↗</span>
+              <a className="ext-link" href="https://www.bible.com/pt/bible/1608/JHN.1.ARC" target="_blank" rel="noopener noreferrer">
+                <span className="ext-link-icon">📱</span>
+                <span className="ext-link-text">YouVersion — app de bíblia</span>
+                <span className="link-arrow">↗</span>
               </a>
 
               <div className="card" style={{marginTop:'8px'}}>
-                <div className="card-label teal">Plano de Leitura</div>
+                <div className="card-label teal-text">Plano de Leitura</div>
                 <table className="plan-table">
                   <thead><tr><th>Período</th><th>Ritmo</th><th>Capítulos</th></tr></thead>
                   <tbody>
@@ -413,21 +528,20 @@ export default function Home() {
                 </table>
               </div>
 
-              {/* Reflexão Bíblia */}
               {mounted && (
-                <div className="card" style={{borderLeft:'3px solid var(--teal)',marginBottom:'14px'}}>
-                  <div className="card-label teal">Minha Reflexão — {displayDate(todayKey())}</div>
-                  <div style={{fontSize:'.8rem',color:'var(--fg-muted)',marginBottom:'10px'}}>O que esse capítulo te disse? O que ficou? Escreva livremente — só para você.</div>
+                <div className="card card-teal-border" style={{marginTop:'4px'}}>
+                  <div className="card-label teal-text">Minha Reflexão — {displayDate(todayKey())}</div>
+                  <div className="reflect-hint">O que esse capítulo te disse? Escreva livremente — só para você.</div>
                   <textarea
                     defaultValue={bibliaReflect[todayKey()] || ''}
                     placeholder="Escreva aqui sua reflexão do dia…"
                     onChange={e => saveReflect(todayKey(), e.target.value, 'bussula-reflect-biblia', setBibliaReflect)}
-                    style={{width:'100%',minHeight:'130px',background:'var(--surface2)',border:'1px solid var(--border2)',borderRadius:'10px',color:'var(--fg)',fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.75',padding:'14px',resize:'vertical',outline:'none'}}
+                    className="reflect-textarea"
                   />
                   {Object.keys(bibliaReflect).filter(k => k !== todayKey() && bibliaReflect[k].trim()).sort().reverse().slice(0,5).map(k => (
-                    <div key={k} style={{marginTop:'10px',padding:'12px',background:'var(--surface2)',borderRadius:'10px',borderLeft:'2px solid var(--teal)'}}>
-                      <div style={{fontSize:'.68rem',color:'var(--fg-dim)',marginBottom:'6px'}}>{displayDate(k)}</div>
-                      <div style={{fontSize:'.88rem',color:'var(--fg-muted)',lineHeight:'1.6'}}>{bibliaReflect[k]}</div>
+                    <div key={k} className="reflect-past">
+                      <div className="reflect-past-date">{displayDate(k)}</div>
+                      <div className="reflect-past-text">{bibliaReflect[k]}</div>
                     </div>
                   ))}
                 </div>
@@ -435,7 +549,7 @@ export default function Home() {
             </section>
           )}
 
-          {/* LEITURA */}
+          {/* ═══ LEITURA ═══ */}
           {tab === 'leitura' && (
             <section className="panel">
               <div className="section-eyebrow blue-text">Leitura Diária</div>
@@ -448,7 +562,7 @@ export default function Home() {
                   <div className="book-author">Viktor E. Frankl · 1946</div>
                   <div className="progress-wrap" style={{marginTop:'4px'}}>
                     <div className="progress-label"><span>Progresso</span><span>Início</span></div>
-                    <div className="progress-bar"><div className="progress-fill blue" style={{width:'2%'}} /></div>
+                    <div className="progress-bar"><div className="progress-fill blue-bg" style={{width:'2%'}} /></div>
                   </div>
                 </div>
               </div>
@@ -462,10 +576,10 @@ export default function Home() {
                 const idx = getDayOfYear() % FRANKL_NOTES.length
                 const n = FRANKL_NOTES[idx]
                 return (
-                  <div className="card" style={{borderLeft:'3px solid var(--blue)',marginBottom:'14px',background:'linear-gradient(135deg,rgba(106,171,247,.06),rgba(9,9,16,0))'}}>
-                    <div className="card-label blue">O que prestar atenção — {n.pages}</div>
-                    <div style={{fontSize:'.72rem',color:'var(--blue)',marginBottom:'8px',fontWeight:600,letterSpacing:'.06em',textTransform:'uppercase'}}>{n.tema}</div>
-                    <p style={{fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.8',color:'var(--fg)',margin:0}}>{n.nota}</p>
+                  <div className="card card-blue-border card-blue-bg">
+                    <div className="card-label blue-text">O que prestar atenção — {n.pages}</div>
+                    <div className="note-tema">{n.tema}</div>
+                    <p className="serif-body">{n.nota}</p>
                   </div>
                 )
               })()}
@@ -473,24 +587,43 @@ export default function Home() {
               <a className="book-link" href="/frankl.pdf" target="_blank" rel="noopener noreferrer">
                 <span style={{fontSize:'1.1rem'}}>📄</span>
                 <span style={{flex:1}}>Abrir o livro em PDF — Em Busca de Sentido</span>
-                <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
+                <span className="link-arrow">↗</span>
               </a>
 
-              {/* Reflexão Leitura */}
+              {/* Book list (moved from Inspiração) */}
+              <div className="card" style={{marginTop:'14px'}}>
+                <div className="card-label violet-text">Próximas Leituras</div>
+                {[
+                  {n:'01', title:'As 12 Regras para a Vida', author:'Jordan B. Peterson'},
+                  {n:'02', title:'O Monge e o Executivo', author:'James C. Hunter'},
+                  {n:'03', title:'Os Quatro Compromissos', author:'Don Miguel Ruiz'},
+                  {n:'04', title:'Alcoólicos Anônimos — O Livro Grande', author:'Bill Wilson et al.'},
+                  {n:'05', title:'O Poder do Hábito', author:'Charles Duhigg'},
+                ].map((book, i) => (
+                  <div key={i} className="booklist-item">
+                    <div className="booklist-num">{book.n}</div>
+                    <div>
+                      <div className="booklist-title">{book.title}</div>
+                      <div className="booklist-author">{book.author}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               {mounted && (
-                <div className="card" style={{borderLeft:'3px solid var(--blue)',marginTop:'14px'}}>
-                  <div className="card-label blue">Minha Reflexão — {displayDate(todayKey())}</div>
-                  <div style={{fontSize:'.8rem',color:'var(--fg-muted)',marginBottom:'10px'}}>O que esse trecho te tocou? Que ideia você leva para hoje?</div>
+                <div className="card card-blue-border" style={{marginTop:'4px'}}>
+                  <div className="card-label blue-text">Minha Reflexão — {displayDate(todayKey())}</div>
+                  <div className="reflect-hint">O que esse trecho te tocou? Que ideia você leva para hoje?</div>
                   <textarea
                     defaultValue={leituraReflect[todayKey()] || ''}
                     placeholder="Escreva aqui sua reflexão da leitura…"
                     onChange={e => saveReflect(todayKey(), e.target.value, 'bussula-reflect-leitura', setLeituraReflect)}
-                    style={{width:'100%',minHeight:'120px',background:'var(--surface2)',border:'1px solid var(--border2)',borderRadius:'10px',color:'var(--fg)',fontFamily:"'Lora',Georgia,serif",fontSize:'.95rem',lineHeight:'1.75',padding:'14px',resize:'vertical',outline:'none'}}
+                    className="reflect-textarea"
                   />
                   {Object.keys(leituraReflect).filter(k => k !== todayKey() && leituraReflect[k].trim()).sort().reverse().slice(0,5).map(k => (
-                    <div key={k} style={{marginTop:'10px',padding:'12px',background:'var(--surface2)',borderRadius:'10px',borderLeft:'2px solid var(--blue)'}}>
-                      <div style={{fontSize:'.68rem',color:'var(--fg-dim)',marginBottom:'6px'}}>{displayDate(k)}</div>
-                      <div style={{fontSize:'.88rem',color:'var(--fg-muted)',lineHeight:'1.6'}}>{leituraReflect[k]}</div>
+                    <div key={k} className="reflect-past">
+                      <div className="reflect-past-date">{displayDate(k)}</div>
+                      <div className="reflect-past-text">{leituraReflect[k]}</div>
                     </div>
                   ))}
                 </div>
@@ -498,85 +631,43 @@ export default function Home() {
             </section>
           )}
 
-          {/* INSPIRAÇÃO */}
-          {tab === 'inspiracao' && (
-            <section className="panel">
-              <div className="section-eyebrow" style={{color:'var(--violet)'}}>Sua bússola</div>
-              <div className="section-title">Inspiração</div>
-
-              <div className="card" style={{borderLeft:'3px solid var(--violet)',marginBottom:'18px'}}>
-                <div className="card-label" style={{color:'var(--violet)'}}>O que fazer</div>
-                {[
-                  {icon:'🏃', title:'Correr ou caminhar', desc:'30–45 min, qualquer horário. Movimento muda o estado mental antes do café da manhã.'},
-                  {icon:'🤝', title:'Reunião do AA', desc:'Presença diária, mesmo quando está bem. A comunidade é o antídoto para o isolamento.'},
-                  {icon:'🙏', title:'Meditação ou silêncio', desc:'10–15 min de manhã. Pode ser só sentar, respirar, e não fazer nada. Isso já é prática.'},
-                  {icon:'🤲', title:'Trabalho voluntário', desc:'Ajudar outros é um dos pilares da recuperação. Hospitais, NA, AA, CDRJ — há vários caminhos.'},
-                  {icon:'🎓', title:'Voltar à faculdade em 2025', desc:'Psicologia ou dependência química — o mestrado começa com uma matrícula. Pesquise uma disciplina por semana.'},
-                  {icon:'📔', title:'Diário de gratidão', desc:'3 coisas boas antes de dormir. Treina o cérebro para notar o que funcionou, não só o que falhou.'},
-                ].map((item, i) => (
-                  <div key={i} className="inspire-item" style={{marginTop: i===0?'4px':'12px'}}>
-                    <span className="inspire-icon">{item.icon}</span>
-                    <div>
-                      <div className="inspire-title">{item.title}</div>
-                      <div className="inspire-desc">{item.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Vídeo motivacional do dia */}
-              {mounted && (() => {
-                const v = VIDEOS[getDayOfYear() % VIDEOS.length]
-                return (
-                  <a href={v.url} target="_blank" rel="noopener noreferrer" style={{display:'flex',alignItems:'center',gap:'12px',padding:'16px',background:'linear-gradient(135deg,rgba(167,139,250,.08),rgba(9,9,16,0))',borderRadius:'12px',border:'1px solid var(--border)',textDecoration:'none',color:'var(--fg)',marginBottom:'18px'}}>
-                    <span style={{fontSize:'1.8rem'}}>▶</span>
-                    <div style={{flex:1}}>
-                      <div style={{fontSize:'.72rem',color:'var(--violet)',fontWeight:600,letterSpacing:'.06em',textTransform:'uppercase',marginBottom:'4px'}}>Vídeo do Dia — {v.canal}</div>
-                      <div style={{fontWeight:600,fontSize:'.92rem',lineHeight:'1.4'}}>{v.titulo}</div>
-                    </div>
-                    <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
-                  </a>
-                )
-              })()}
-
-              <div className="card" style={{borderLeft:'3px solid var(--violet)'}}>
-                <div className="card-label" style={{color:'var(--violet)'}}>O que ler</div>
-                {[
-                  {n:'01', title:'Em Busca de Sentido', author:'Viktor E. Frankl', why:'Você já está lendo. O livro certo na hora certa.'},
-                  {n:'02', title:'As 12 Regras para a Vida', author:'Jordan B. Peterson', why:'Ordem prática para o caos pessoal — escrito por um psicólogo clínico, sem floreios.'},
-                  {n:'03', title:'O Monge e o Executivo', author:'James C. Hunter', why:'Liderança de si mesmo antes de liderar outros. Leitura rápida, impacto duradouro.'},
-                  {n:'04', title:'Os Quatro Compromissos', author:'Don Miguel Ruiz', why:'Sabedoria tolteca condensada em quatro princípios. Curto e profundo.'},
-                  {n:'05', title:'Alcoólicos Anônimos — O Livro Grande', author:'Bill Wilson et al.', why:'O livro base do AA. Releio sempre que necessário — não precisa ser linear.'},
-                  {n:'06', title:'O Poder do Hábito', author:'Charles Duhigg', why:'Entender como hábitos se formam ajuda a construir os certos e quebrar os errados.'},
-                ].map((book, i) => (
-                  <div key={i} className="booklist-item">
-                    <div className="booklist-num">{book.n}</div>
-                    <div>
-                      <div className="booklist-title">{book.title}</div>
-                      <div className="booklist-author">{book.author}</div>
-                      <div className="booklist-why">{book.why}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* ORAÇÃO */}
+          {/* ═══ ORAÇÃO ═══ */}
           {tab === 'oracao' && (
             <section className="panel">
               <div className="section-eyebrow rose-text">Dois minutos, duas vezes</div>
-              <div className="section-title">Orações do Dia</div>
+              <div className="section-title">Orações e Reflexões</div>
 
-              <a className="reading-link" href="https://open.spotify.com/playlist/37i9dQZF1DWXe9gFZP0gtP" target="_blank" rel="noopener noreferrer" style={{marginBottom:'18px',display:'flex',alignItems:'center',gap:'12px',padding:'14px 16px',background:'var(--surface)',borderRadius:'12px',border:'1px solid var(--border)',textDecoration:'none',color:'var(--fg)'}}>
-                <span style={{fontSize:'1.4rem'}}>🎵</span>
+              {/* Música para meditação — YouTube Music */}
+              <a className="music-link" href="https://music.youtube.com/search?q=meditação+calma+paz+relaxamento" target="_blank" rel="noopener noreferrer" style={{marginBottom:'18px'}}>
+                <span className="music-icon">🎵</span>
                 <div style={{flex:1}}>
-                  <div style={{fontWeight:600,fontSize:'.9rem',color:'var(--rose)'}}>Música para Meditação</div>
-                  <div style={{fontSize:'.75rem',color:'var(--fg-muted)'}}>Spotify — Calm Meditation</div>
+                  <div className="music-title rose-text">Música para Meditação</div>
+                  <div className="music-sub">YouTube Music — Calma e paz</div>
                 </div>
-                <span style={{color:'var(--fg-dim)',fontSize:'0.8rem'}}>↗</span>
+                <span className="link-arrow">↗</span>
               </a>
 
+              {/* Reflexão Diária AA */}
+              <div className="card card-rose-border card-rose-bg">
+                <div className="card-label rose-text">Reflexão da Recuperação — {aaRef.passo}</div>
+                <div className="note-tema rose-text">{aaRef.tema}</div>
+                <p className="serif-body">{aaRef.reflexao}</p>
+              </div>
+
+              {/* Link para Reflexões Diárias oficial */}
+              <a className="ext-link" href="https://www.aa.org.br/reflexoes-diarias" target="_blank" rel="noopener noreferrer" style={{marginBottom:'4px'}}>
+                <span className="ext-link-icon">📖</span>
+                <span className="ext-link-text">Reflexões Diárias — AA Brasil (site oficial)</span>
+                <span className="link-arrow">↗</span>
+              </a>
+
+              {/* Na Opinião de Bill */}
+              <div className="card card-amber-border card-amber-bg">
+                <div className="card-label amber-text">Na Opinião de Bill — {billRef.tema}</div>
+                <p className="serif-body">{billRef.texto}</p>
+              </div>
+
+              {/* Orações */}
               {[
                 {
                   moment: 'Manhã — Para começar',
@@ -612,6 +703,147 @@ export default function Home() {
               ))}
             </section>
           )}
+
+          {/* ═══ INVENTÁRIO ═══ */}
+          {tab === 'inventario' && (
+            <section className="panel">
+              <div className="section-eyebrow amber-text">Passo 10 — Exame diário</div>
+              <div className="section-title">Inventário do Dia</div>
+
+              <div className="inv-tabs">
+                <button className={`inv-tab ${invView === 'form' ? 'active' : ''}`} onClick={() => setInvView('form')}>Hoje</button>
+                <button className={`inv-tab ${invView === 'history' ? 'active' : ''}`} onClick={() => setInvView('history')}>Semana</button>
+              </div>
+
+              {invView === 'form' && mounted && (
+                <>
+                  <div className="inv-date">{displayDate(todayKey())} — {weekdayName(todayKey())}</div>
+
+                  <div className="inv-section">
+                    <label className="inv-label teal-text">O que fiz certo hoje</label>
+                    <textarea
+                      value={invForm.acertos}
+                      onChange={e => updateInvField('acertos', e.target.value)}
+                      placeholder="O que funcionou? O que fiz de bom?"
+                      className="inv-textarea"
+                    />
+                  </div>
+
+                  <div className="inv-section">
+                    <label className="inv-label rose-text">Onde errei hoje</label>
+                    <textarea
+                      value={invForm.erros}
+                      onChange={e => updateInvField('erros', e.target.value)}
+                      placeholder="O que posso melhorar? Onde vacilei?"
+                      className="inv-textarea"
+                    />
+                  </div>
+
+                  <div className="inv-section">
+                    <label className="inv-label amber-text">Como me sinto agora</label>
+                    <div className="mood-row">
+                      {MOODS.map(m => (
+                        <button
+                          key={m.emoji}
+                          className={`mood-btn ${invForm.humor === m.emoji ? 'selected' : ''}`}
+                          onClick={() => updateInvField('humor', m.emoji)}
+                        >
+                          <span className="mood-emoji">{m.emoji}</span>
+                          <span className="mood-label">{m.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="inv-section">
+                    <label className="inv-label gold-text">Pelo que sou grato</label>
+                    <textarea
+                      value={invForm.gratidao}
+                      onChange={e => updateInvField('gratidao', e.target.value)}
+                      placeholder="3 coisas boas de hoje…"
+                      className="inv-textarea"
+                    />
+                  </div>
+
+                  <div className="inv-saved">Salvo automaticamente</div>
+                </>
+              )}
+
+              {invView === 'history' && mounted && (
+                <>
+                  <div className="inv-week-title">Últimos 7 dias</div>
+
+                  {/* Week mood strip */}
+                  <div className="week-strip">
+                    {weekKeys.map(k => {
+                      const entry = inventory[k]
+                      const isToday = k === todayKey()
+                      return (
+                        <div key={k} className={`week-day ${isToday ? 'today' : ''}`}>
+                          <div className="week-day-name">{weekdayName(k).slice(0,3)}</div>
+                          <div className="week-day-mood">{entry?.humor || '·'}</div>
+                          <div className="week-day-date">{k.split('-')[2]}</div>
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {/* Stats */}
+                  {(() => {
+                    const filled = weekKeys.filter(k => inventory[k] && (inventory[k].acertos || inventory[k].erros || inventory[k].humor || inventory[k].gratidao)).length
+                    return (
+                      <div className="week-stats">
+                        <div className="week-stat">
+                          <div className="week-stat-num">{filled}</div>
+                          <div className="week-stat-label">dias preenchidos</div>
+                        </div>
+                        <div className="week-stat">
+                          <div className="week-stat-num">{7 - filled}</div>
+                          <div className="week-stat-label">dias em branco</div>
+                        </div>
+                      </div>
+                    )
+                  })()}
+
+                  {/* Day entries */}
+                  {weekKeys.slice().reverse().map(k => {
+                    const entry = inventory[k]
+                    if (!entry || (!entry.acertos && !entry.erros && !entry.humor && !entry.gratidao)) return null
+                    return (
+                      <div key={k} className="inv-entry">
+                        <div className="inv-entry-header">
+                          <span className="inv-entry-date">{displayDate(k)} — {weekdayName(k)}</span>
+                          {entry.humor && <span className="inv-entry-mood">{entry.humor}</span>}
+                        </div>
+                        {entry.acertos && (
+                          <div className="inv-entry-field">
+                            <span className="inv-entry-label teal-text">Acertos:</span>
+                            <span className="inv-entry-text">{entry.acertos}</span>
+                          </div>
+                        )}
+                        {entry.erros && (
+                          <div className="inv-entry-field">
+                            <span className="inv-entry-label rose-text">Erros:</span>
+                            <span className="inv-entry-text">{entry.erros}</span>
+                          </div>
+                        )}
+                        {entry.gratidao && (
+                          <div className="inv-entry-field">
+                            <span className="inv-entry-label gold-text">Gratidão:</span>
+                            <span className="inv-entry-text">{entry.gratidao}</span>
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+
+                  {weekKeys.every(k => !inventory[k] || (!inventory[k].acertos && !inventory[k].erros && !inventory[k].humor && !inventory[k].gratidao)) && (
+                    <div className="inv-empty">Nenhum inventário esta semana. Comece pelo hoje.</div>
+                  )}
+                </>
+              )}
+            </section>
+          )}
         </main>
 
         {/* ── TAB NAV ── */}
@@ -621,7 +853,7 @@ export default function Home() {
             { id: 'biblia',     icon: '✦', label: 'Bíblia' },
             { id: 'leitura',    icon: '◎', label: 'Leitura' },
             { id: 'oracao',     icon: '◉', label: 'Oração' },
-            { id: 'inspiracao', icon: '✧', label: 'Inspiração' },
+            { id: 'inventario', icon: '✧', label: 'Inventário' },
           ].map(t => (
             <button
               key={t.id}
@@ -645,18 +877,21 @@ export default function Home() {
         .header {
           position: fixed; top: 0; left: 0; right: 0;
           height: var(--header-h);
-          background: rgba(9,9,16,.92);
-          backdrop-filter: blur(16px);
-          border-bottom: 1px solid var(--border);
+          background: linear-gradient(180deg, rgba(10,10,18,.97) 0%, rgba(10,10,18,.92) 100%);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(255,255,255,.06);
           display: flex; align-items: center; justify-content: space-between;
           padding: 0 20px; z-index: 10;
         }
         .header-left { display: flex; flex-direction: column; gap: 2px; }
         .header-title {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.3rem; letter-spacing: 0.08em;
+          font-size: 1.3rem; letter-spacing: 0.06em;
+          background: linear-gradient(135deg, var(--gold) 0%, #E8C87A 100%);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
-        .header-sub { font-size: 0.65rem; color: var(--fg-dim); letter-spacing: 0.06em; text-transform: uppercase; }
+        .header-sub { font-size: 0.62rem; color: var(--fg-dim); letter-spacing: 0.08em; text-transform: uppercase; }
         .header-date { font-size: 0.72rem; color: var(--fg-muted); }
 
         /* CONTENT */
@@ -665,19 +900,16 @@ export default function Home() {
           margin-bottom: var(--tab-h);
           overflow-y: auto; flex: 1;
         }
-        .panel {
-          padding: 28px 20px 40px;
-          animation: fadeIn 0.22s ease;
-        }
-        @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+        .panel { padding: 28px 20px 40px; animation: fadeIn 0.25s ease; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
 
         /* TAB NAV */
         .tab-nav {
           position: fixed; bottom: 0; left: 0; right: 0;
           height: var(--tab-h);
-          background: rgba(13,13,22,.96);
-          backdrop-filter: blur(16px);
-          border-top: 1px solid var(--border);
+          background: linear-gradient(180deg, rgba(10,10,18,.94) 0%, rgba(10,10,18,.98) 100%);
+          backdrop-filter: blur(20px);
+          border-top: 1px solid rgba(255,255,255,.06);
           display: flex;
         }
         .tab-btn {
@@ -686,32 +918,42 @@ export default function Home() {
           border: none; background: none; cursor: pointer;
           color: var(--fg-dim);
           font-family: 'Inter', sans-serif;
-          font-size: 0.58rem; font-weight: 600;
-          letter-spacing: 0.09em; text-transform: uppercase;
+          font-size: 0.54rem; font-weight: 600;
+          letter-spacing: 0.08em; text-transform: uppercase;
           transition: color 0.18s; padding-top: 10px;
         }
-        .tab-icon { font-size: 1.2rem; transition: transform 0.2s; }
+        .tab-icon { font-size: 1.15rem; transition: transform 0.2s; }
         .tab-btn.active .tab-icon { transform: scale(1.14); }
         .tab-btn.hoje       { color: var(--gold); }
         .tab-btn.biblia     { color: var(--teal); }
         .tab-btn.leitura    { color: var(--blue); }
         .tab-btn.oracao     { color: var(--rose); }
-        .tab-btn.inspiracao { color: var(--violet); }
+        .tab-btn.inventario { color: var(--amber); }
 
         /* TYPOGRAPHY */
         .section-eyebrow { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 7px; }
         .teal-text { color: var(--teal); }
         .blue-text { color: var(--blue); }
         .rose-text { color: var(--rose); }
-        .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.75rem; line-height: 1.2; margin-bottom: 24px; }
+        .gold-text { color: var(--gold); }
+        .amber-text { color: var(--amber); }
+        .violet-text { color: var(--violet); }
+        .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.7rem; line-height: 1.2; margin-bottom: 24px; }
+        .serif-body { font-family: 'Lora', Georgia, serif; font-size: .95rem; line-height: 1.85; color: var(--fg); margin: 0; }
+        .note-tema { font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; color: inherit; }
 
         /* CARDS */
         .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 14px; }
         .card-gold { border-left: 3px solid var(--gold); }
+        .card-teal-border { border-left: 3px solid var(--teal); }
+        .card-blue-border { border-left: 3px solid var(--blue); }
+        .card-rose-border { border-left: 3px solid var(--rose); }
+        .card-amber-border { border-left: 3px solid var(--amber); }
+        .card-teal-bg { background: linear-gradient(135deg, rgba(64,212,180,.06), rgba(9,9,16,0)); }
+        .card-blue-bg { background: linear-gradient(135deg, rgba(106,171,247,.06), rgba(9,9,16,0)); }
+        .card-rose-bg { background: linear-gradient(135deg, rgba(240,112,128,.06), rgba(9,9,16,0)); }
+        .card-amber-bg { background: linear-gradient(135deg, rgba(230,172,60,.06), rgba(9,9,16,0)); }
         .card-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 7px; }
-        .card-label.gold { color: var(--gold); }
-        .card-label.teal { color: var(--teal); }
-        .card-label.blue { color: var(--blue); }
 
         /* QUOTE OF DAY */
         .quote-of-day { background: linear-gradient(135deg, rgba(245,176,66,.08), rgba(9,9,16,0)); }
@@ -722,58 +964,75 @@ export default function Home() {
         .pillar-item { display: flex; align-items: flex-start; gap: 15px; padding: 16px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: opacity 0.15s; }
         .pillar-item:last-child { border-bottom: none; }
         .pillar-item:hover { opacity: 0.8; }
-        .pillar-icon { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+        .pillar-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
         .pillar-icon.teal { background: var(--teal-dim); box-shadow: 0 0 0 1px var(--teal-glow); }
         .pillar-icon.blue { background: var(--blue-dim); box-shadow: 0 0 0 1px var(--blue-glow); }
         .pillar-icon.gold { background: var(--gold-dim); box-shadow: 0 0 0 1px var(--gold-glow); }
         .pillar-icon.rose { background: var(--rose-dim); box-shadow: 0 0 0 1px var(--rose-glow); }
+        .pillar-icon.amber { background: rgba(230,172,60,.10); box-shadow: 0 0 0 1px rgba(230,172,60,.18); }
         .pillar-body { flex: 1; min-width: 0; }
         .pillar-name { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; margin-bottom: 2px; }
         .pillar-name.teal { color: var(--teal); }
         .pillar-name.blue { color: var(--blue); }
         .pillar-name.gold { color: var(--gold); }
         .pillar-name.rose { color: var(--rose); }
-        .pillar-desc { font-size: 0.92rem; color: var(--fg); line-height: 1.4; }
-        .pillar-sub  { font-size: 0.76rem; color: var(--fg-muted); margin-top: 3px; }
+        .pillar-name.amber { color: var(--amber); }
+        .pillar-desc { font-size: 0.9rem; color: var(--fg); line-height: 1.4; }
+        .pillar-sub  { font-size: 0.74rem; color: var(--fg-muted); margin-top: 3px; }
         .pillar-arrow { color: var(--fg-dim); font-size: 0.85rem; align-self: center; flex-shrink: 0; }
 
         /* VERSE CARD */
-        .verse-card { background: linear-gradient(135deg, rgba(64,212,180,.07), rgba(9,9,16,0)); border: 1px solid rgba(64,212,180,.22); border-radius: 16px; padding: 22px; margin-bottom: 14px; }
-        .verse-text { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; line-height: 1.82; font-style: italic; color: var(--fg); margin-bottom: 10px; }
+        .verse-card { background: linear-gradient(135deg, rgba(64,212,180,.06), rgba(9,9,16,0)); border: 1px solid rgba(64,212,180,.18); border-radius: 16px; padding: 22px; margin-bottom: 14px; }
+        .verse-text { font-family: 'Playfair Display', Georgia, serif; font-size: 1.08rem; line-height: 1.82; font-style: italic; color: var(--fg); margin-bottom: 10px; }
         .verse-ref { font-size: 0.7rem; color: var(--teal); font-weight: 700; letter-spacing: 0.08em; }
 
         /* TODAY */
         .today-greeting { margin-bottom: 24px; }
-        .today-day { font-family: 'Playfair Display', Georgia, serif; font-size: 2.2rem; line-height: 1.1; margin-bottom: 4px; }
+        .today-day { font-family: 'Playfair Display', Georgia, serif; font-size: 2.1rem; line-height: 1.1; margin-bottom: 4px; }
         .today-sub { font-size: 0.84rem; color: var(--fg-muted); }
+
+        /* MUSIC LINK */
+        .music-link { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface); border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: var(--fg); margin-bottom: 14px; transition: border-color 0.18s; }
+        .music-link:hover { border-color: var(--fg-dim); }
+        .music-icon { font-size: 1.3rem; }
+        .music-title { font-weight: 600; font-size: .88rem; }
+        .music-sub { font-size: .73rem; color: var(--fg-muted); }
+
+        /* VIDEO LINK */
+        .video-link { display: flex; align-items: center; gap: 12px; padding: 16px; background: linear-gradient(135deg, rgba(167,139,250,.07), rgba(9,9,16,0)); border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: var(--fg); margin-bottom: 14px; transition: border-color 0.18s; }
+        .video-link:hover { border-color: var(--violet); }
+        .video-play { font-size: 1.6rem; color: var(--violet); }
+        .video-label { font-size: .7rem; color: var(--violet); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
+        .video-title { font-weight: 600; font-size: .9rem; line-height: 1.4; }
+        .link-arrow { color: var(--fg-dim); font-size: 0.8rem; flex-shrink: 0; }
 
         /* BIBLE READING */
         .chapter-nav-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
         .chapter-info { font-size: 0.82rem; color: var(--fg-muted); }
-        .reading-nav { display: flex; gap: 8px; }
-        .nav-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border2); background: var(--surface2); color: var(--fg-muted); font-size: 1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.18s; }
-        .nav-btn:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
-        .nav-btn:disabled { opacity: 0.3; cursor: default; }
+        .nav-btn-pill { border-radius: 10px; width: auto; padding: 0 14px; height: 36px; border: 1px solid var(--border2); background: var(--surface2); color: var(--fg-muted); font-size: .8rem; font-weight: 600; cursor: pointer; transition: all 0.18s; font-family: inherit; }
+        .nav-btn-pill:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+        .nav-btn-pill:disabled { opacity: 0.3; cursor: default; }
         .reading-body { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px; margin-bottom: 14px; }
-        .chapter-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: var(--teal); margin-bottom: 20px; }
+        .chapter-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: var(--teal); margin-bottom: 20px; }
         .verse-line { margin-bottom: 2px; }
         .verse-num { font-size: 0.65rem; font-weight: 700; color: var(--teal); vertical-align: super; margin-right: 4px; }
         .verse-body { font-family: 'Lora', Georgia, serif; font-size: 1rem; line-height: 1.88; color: var(--fg); }
 
-        /* LINKS */
-        .reading-link, .book-link { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: var(--surface2); border: 1px solid var(--border2); border-radius: 12px; color: var(--teal); font-size: 0.84rem; font-weight: 500; text-decoration: none; margin-bottom: 10px; transition: border-color 0.18s, background 0.18s; }
-        .reading-link:hover { border-color: var(--teal); background: var(--teal-dim); }
+        /* EXT LINKS */
+        .ext-link, .book-link { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: var(--surface2); border: 1px solid var(--border2); border-radius: 12px; color: var(--fg-muted); font-size: 0.84rem; font-weight: 500; text-decoration: none; margin-bottom: 10px; transition: border-color 0.18s; }
+        .ext-link:hover { border-color: var(--teal); color: var(--teal); }
         .book-link { color: var(--blue); }
         .book-link:hover { border-color: var(--blue); background: var(--blue-dim); }
-        .reading-link-icon, .reading-link-arr { flex-shrink: 0; }
+        .ext-link-icon, .ext-link-text { flex-shrink: 0; }
+        .ext-link-text { flex: 1; }
 
         /* PROGRESS */
         .progress-wrap { margin: 14px 0 4px; }
         .progress-label { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--fg-muted); margin-bottom: 6px; }
         .progress-bar { height: 3px; border-radius: 2px; background: var(--border); overflow: hidden; }
         .progress-fill { height: 100%; border-radius: 2px; transition: width 0.4s ease; }
-        .progress-fill.teal { background: var(--teal); }
-        .progress-fill.blue { background: var(--blue); }
+        .teal-bg { background: var(--teal); }
+        .blue-bg { background: var(--blue); }
 
         /* BOOK */
         .book-header { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
@@ -781,10 +1040,6 @@ export default function Home() {
         .book-info { flex: 1; min-width: 0; }
         .book-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; line-height: 1.3; color: var(--fg); margin-bottom: 4px; }
         .book-author { font-size: 0.8rem; color: var(--fg-muted); margin-bottom: 10px; }
-        .excerpt-body { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px; margin-bottom: 14px; }
-        .excerpt-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
-        .excerpt-text p { font-family: 'Lora', Georgia, serif; font-size: 0.98rem; line-height: 1.9; color: var(--fg); margin-bottom: 14px; }
-        .excerpt-text p:last-child { margin-bottom: 0; }
         .quote-block { border-left: 2px solid var(--blue); padding-left: 18px; margin: 16px 0; }
         .quote-text { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-style: italic; line-height: 1.72; color: var(--fg); }
         .quote-author { font-size: 0.7rem; color: var(--fg-muted); margin-top: 8px; }
@@ -793,7 +1048,7 @@ export default function Home() {
         .prayer-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px; margin-bottom: 14px; position: relative; overflow: hidden; }
         .prayer-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--rose), transparent); }
         .prayer-moment { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 6px; }
-        .prayer-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; color: var(--fg); margin-bottom: 16px; }
+        .prayer-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.08rem; color: var(--fg); margin-bottom: 16px; }
         .prayer-text { font-family: 'Lora', Georgia, serif; font-size: 1rem; line-height: 2; color: var(--fg); white-space: pre-line; }
         .prayer-source { font-size: 0.68rem; color: var(--fg-dim); margin-top: 14px; font-style: italic; }
 
@@ -803,20 +1058,63 @@ export default function Home() {
         .plan-table td { padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--fg-muted); vertical-align: top; }
         .plan-table td:first-child { color: var(--fg); font-weight: 500; padding-right: 12px; white-space: nowrap; }
         .plan-table tr.now td:first-child { color: var(--teal); font-weight: 600; }
-        .plan-table tr.now-blue td:first-child { color: var(--blue); font-weight: 600; }
 
-        /* INSPIRAÇÃO */
-        .inspire-item { display: flex; align-items: flex-start; gap: 14px; }
-        .inspire-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; background: rgba(167,139,250,.12); }
-        .inspire-title { font-weight: 600; font-size: .9rem; color: var(--fg); margin-bottom: 2px; }
-        .inspire-desc { font-size: .8rem; color: var(--fg-muted); line-height: 1.5; }
+        /* REFLECT */
+        .reflect-hint { font-size: .8rem; color: var(--fg-muted); margin-bottom: 10px; }
+        .reflect-textarea { width: 100%; min-height: 120px; background: var(--surface2); border: 1px solid var(--border2); border-radius: 10px; color: var(--fg); font-family: 'Lora', Georgia, serif; font-size: .95rem; line-height: 1.75; padding: 14px; resize: vertical; outline: none; }
+        .reflect-textarea:focus { border-color: var(--fg-dim); }
+        .reflect-past { margin-top: 10px; padding: 12px; background: var(--surface2); border-radius: 10px; border-left: 2px solid var(--border2); }
+        .reflect-past-date { font-size: .68rem; color: var(--fg-dim); margin-bottom: 6px; }
+        .reflect-past-text { font-size: .88rem; color: var(--fg-muted); line-height: 1.6; }
 
+        /* BOOKLIST */
         .booklist-item { display: flex; align-items: flex-start; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-top: 8px; }
         .booklist-item:last-child { border-bottom: none; padding-bottom: 0; }
         .booklist-num { font-size: .68rem; color: var(--violet); font-weight: 700; letter-spacing: .06em; padding-top: 2px; min-width: 22px; }
         .booklist-title { font-weight: 600; font-size: .9rem; color: var(--fg); }
-        .booklist-author { font-size: .75rem; color: var(--fg-muted); margin: 1px 0 4px; }
-        .booklist-why { font-size: .78rem; color: var(--fg-dim); line-height: 1.5; }
+        .booklist-author { font-size: .75rem; color: var(--fg-muted); margin: 1px 0; }
+
+        /* ═══ INVENTÁRIO ═══ */
+        .inv-tabs { display: flex; gap: 4px; margin-bottom: 20px; background: var(--surface); border-radius: 12px; padding: 4px; border: 1px solid var(--border); }
+        .inv-tab { flex: 1; padding: 10px; border: none; background: none; color: var(--fg-muted); font-family: inherit; font-size: .82rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.18s; }
+        .inv-tab.active { background: var(--surface2); color: var(--amber); }
+        .inv-date { font-size: .82rem; color: var(--fg-muted); margin-bottom: 20px; text-align: center; }
+        .inv-section { margin-bottom: 20px; }
+        .inv-label { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+        .inv-textarea { width: 100%; min-height: 90px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: var(--fg); font-family: 'Lora', Georgia, serif; font-size: .92rem; line-height: 1.7; padding: 14px; resize: vertical; outline: none; transition: border-color 0.18s; }
+        .inv-textarea:focus { border-color: var(--amber); }
+        .inv-saved { text-align: center; font-size: .72rem; color: var(--fg-dim); padding: 8px 0; }
+
+        /* MOOD */
+        .mood-row { display: flex; gap: 6px; flex-wrap: wrap; }
+        .mood-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; transition: all 0.18s; min-width: 50px; }
+        .mood-btn.selected { border-color: var(--amber); background: rgba(230,172,60,.08); }
+        .mood-emoji { font-size: 1.4rem; }
+        .mood-label { font-size: .6rem; color: var(--fg-muted); font-family: inherit; }
+
+        /* WEEK VIEW */
+        .inv-week-title { font-size: .82rem; color: var(--fg-muted); margin-bottom: 16px; }
+        .week-strip { display: flex; gap: 4px; margin-bottom: 20px; }
+        .week-day { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; background: var(--surface); border-radius: 10px; border: 1px solid var(--border); }
+        .week-day.today { border-color: var(--amber); background: rgba(230,172,60,.06); }
+        .week-day-name { font-size: .58rem; font-weight: 600; color: var(--fg-dim); letter-spacing: .04em; text-transform: uppercase; }
+        .week-day-mood { font-size: 1.2rem; min-height: 1.5em; display: flex; align-items: center; }
+        .week-day-date { font-size: .62rem; color: var(--fg-muted); }
+
+        .week-stats { display: flex; gap: 12px; margin-bottom: 20px; }
+        .week-stat { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
+        .week-stat-num { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; color: var(--amber); }
+        .week-stat-label { font-size: .68rem; color: var(--fg-muted); margin-top: 4px; }
+
+        .inv-entry { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 12px; }
+        .inv-entry-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .inv-entry-date { font-size: .72rem; color: var(--fg-muted); font-weight: 600; }
+        .inv-entry-mood { font-size: 1.2rem; }
+        .inv-entry-field { margin-bottom: 8px; }
+        .inv-entry-field:last-child { margin-bottom: 0; }
+        .inv-entry-label { font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-right: 8px; }
+        .inv-entry-text { font-size: .86rem; color: var(--fg); line-height: 1.5; }
+        .inv-empty { text-align: center; color: var(--fg-dim); font-size: .88rem; padding: 40px 0; }
       `}</style>
     </>
   )

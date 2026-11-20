@@ -1,12 +1,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #090910;
-  --surface:   #131320;
-  --surface2:  #1C1C30;
-  --surface3:  #242438;
-  --border:    #272740;
-  --border2:   #32324E;
+  --bg:        #0a0a12;
+  --surface:   #12121f;
+  --surface2:  #1a1a2e;
+  --surface3:  #22223a;
+  --border:    #252540;
+  --border2:   #30304a;
 
   --gold:      #F5B042;
   --gold-glow: rgba(245,176,66,.18);
@@ -23,8 +23,11 @@
   --violet:    #A78BFA;
   --violet-glow: rgba(167,139,250,.18);
   --violet-dim:  rgba(167,139,250,.10);
+  --amber:     #E6AC3C;
+  --amber-glow: rgba(230,172,60,.18);
+  --amber-dim:  rgba(230,172,60,.10);
 
-  --fg:        #EEE9E0;
+  --fg:        #EFEAD8;
   --fg-muted:  #7E7E9A;
   --fg-dim:    #46466A;
 
