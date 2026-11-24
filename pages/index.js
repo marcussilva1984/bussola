@@ -701,6 +701,83 @@ export default function Home() {
                   <div className="prayer-source">{p.source}</div>
                 </div>
               ))}
+
+              {/* ── REUNIÕES ONLINE RJ ── */}
+              <div className="section-eyebrow violet-text" style={{marginTop:'32px'}}>Alcoólicos Anônimos — Rio de Janeiro</div>
+              <div className="section-title" style={{marginBottom:'16px'}}>Reuniões Online — RJ</div>
+
+              {/* Opção 1 — Busca oficial */}
+              <div className="card card-violet-border card-violet-bg" style={{marginBottom:'12px'}}>
+                <div className="card-label violet-text">🔍 Busca oficial do AARJ</div>
+                <p className="serif-body" style={{marginBottom:'12px'}}>
+                  O site do AA Rio tem o buscador atualizado de grupos — incluindo os online. Horário sempre correto.
+                </p>
+                <a className="ext-link" href="https://www.aarj.org.br/busca-grupos" target="_blank" rel="noopener noreferrer" style={{marginBottom:'8px'}}>
+                  <span className="ext-link-icon">🌐</span>
+                  <span className="ext-link-text">Buscar grupos online — aarj.org.br</span>
+                  <span className="link-arrow">↗</span>
+                </a>
+                <div className="meeting-phone-row">
+                  <span className="meeting-phone-icon">📞</span>
+                  <div>
+                    <div className="meeting-phone-label violet-text">Linha de Ajuda — AARJ</div>
+                    <div className="meeting-phone-num">(21) 2253-3377</div>
+                    <div className="meeting-phone-sub">Informam grupos e horários de reuniões online</div>
+                  </div>
+                </div>
+                <a className="ext-link" href="https://aa-intergroup.org/meetings/?country=BR" target="_blank" rel="noopener noreferrer" style={{marginTop:'8px'}}>
+                  <span className="ext-link-icon">🌍</span>
+                  <span className="ext-link-text">Diretório internacional — OIAA (em português)</span>
+                  <span className="link-arrow">↗</span>
+                </a>
+              </div>
+
+              {/* Opção 2 — Lista fixa */}
+              <div className="card card-blue-border">
+                <div className="card-label blue-text">📋 Grupos conhecidos</div>
+                <p style={{fontSize:'.75rem',color:'var(--fg-muted)',marginBottom:'14px',lineHeight:'1.5'}}>
+                  ⚠️ Horários podem mudar. Confirme no AARJ ou (21) 2253-3377 antes de entrar.
+                </p>
+                {[
+                  {
+                    nome: 'AA Online',
+                    dias: 'Diário',
+                    horario: '20h às 21h30',
+                    formato: 'Zoom · Depoimento e partilha',
+                    link: 'https://aaonline.com.br',
+                    nota: 'Grupo exclusivamente online, qualquer estado',
+                  },
+                  {
+                    nome: 'Grupo Amor (feminino)',
+                    dias: 'Seg, Qua, Sáb e Dom',
+                    horario: 'Variados (17h e 20h)',
+                    formato: 'Zoom · Reunião feminina',
+                    link: 'https://linktr.ee/aareunioesfemininas',
+                    nota: 'Verificar senha e link atual no Linktree',
+                  },
+                  {
+                    nome: 'Grupos AARJ com reunião virtual',
+                    dias: 'Sáb e Dom (confirmados)',
+                    horario: '10h',
+                    formato: 'Zoom · Barra da Tijuca e outros bairros',
+                    link: 'https://www.aarj.org.br/busca-grupos',
+                    nota: 'Busque "online" no buscador de grupos do AARJ',
+                  },
+                ].map((m, i) => (
+                  <div key={i} className="meeting-item">
+                    <div className="meeting-nome">{m.nome}</div>
+                    <div className="meeting-row">
+                      <span className="meeting-tag blue-text">📅 {m.dias}</span>
+                      <span className="meeting-tag amber-text">🕐 {m.horario}</span>
+                    </div>
+                    <div className="meeting-formato">{m.formato}</div>
+                    <div className="meeting-nota">{m.nota}</div>
+                    <a href={m.link} target="_blank" rel="noopener noreferrer" className="meeting-link">
+                      Verificar / Entrar ↗
+                    </a>
+                  </div>
+                ))}
+              </div>
             </section>
           )}
 
@@ -1115,6 +1192,26 @@ export default function Home() {
         .inv-entry-label { font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-right: 8px; }
         .inv-entry-text { font-size: .86rem; color: var(--fg); line-height: 1.5; }
         .inv-empty { text-align: center; color: var(--fg-dim); font-size: .88rem; padding: 40px 0; }
+
+        /* REUNIÕES */
+        .card-violet-border { border: 1px solid var(--violet); }
+        .card-violet-bg { background: rgba(167,139,250,.05); }
+        .card-blue-border { border: 1px solid var(--blue); }
+        .meeting-phone-row { display: flex; gap: 12px; align-items: flex-start; padding: 12px; background: var(--surface2); border-radius: 10px; margin-top: 8px; }
+        .meeting-phone-icon { font-size: 1.3rem; flex-shrink: 0; }
+        .meeting-phone-label { font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+        .meeting-phone-num { font-size: 1rem; font-weight: 600; color: var(--fg); margin: 2px 0; }
+        .meeting-phone-sub { font-size: .72rem; color: var(--fg-muted); line-height: 1.4; }
+        .meeting-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+        .meeting-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .meeting-item:first-child { padding-top: 0; }
+        .meeting-nome { font-size: .92rem; font-weight: 600; color: var(--fg); margin-bottom: 6px; }
+        .meeting-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+        .meeting-tag { font-size: .72rem; font-weight: 500; }
+        .meeting-formato { font-size: .78rem; color: var(--fg-muted); margin-bottom: 4px; }
+        .meeting-nota { font-size: .73rem; color: var(--fg-dim); font-style: italic; margin-bottom: 8px; line-height: 1.4; }
+        .meeting-link { display: inline-block; font-size: .75rem; color: var(--teal); text-decoration: none; font-weight: 600; }
+        .meeting-link:hover { text-decoration: underline; }
       `}</style>
     </>
   )
