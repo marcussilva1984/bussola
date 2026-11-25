@@ -346,6 +346,30 @@ export default function Home() {
                 <div className="today-sub">O que o dia de hoje pede de você.</div>
               </div>
 
+              {/* ── CONTADOR DE SOBRIEDADE ── */}
+              {mounted && (() => {
+                const inicio = new Date('2026-11-19T00:00:00')
+                const hoje = new Date()
+                hoje.setHours(0,0,0,0)
+                const dias = Math.floor((hoje - inicio) / 86400000)
+                const anos  = Math.floor(dias / 365)
+                const meses = Math.floor((dias % 365) / 30)
+                const resto = dias % 30
+                let legenda = ''
+                if (anos > 0)  legenda += `${anos} ano${anos > 1 ? 's' : ''}, `
+                if (meses > 0) legenda += `${meses} ${meses > 1 ? 'meses' : 'mês'} e `
+                legenda += `${resto} dia${resto !== 1 ? 's' : ''}`
+                return (
+                  <div className="sobriety-card">
+                    <div className="sobriety-label">Sobriedade</div>
+                    <div className="sobriety-count">{dias}</div>
+                    <div className="sobriety-unit">dias</div>
+                    <div className="sobriety-detail">{legenda}</div>
+                    <div className="sobriety-since">desde 19 de novembro de 2026</div>
+                  </div>
+                )
+              })()}
+
               <div className="card">
                 <div className="pillar-item" onClick={() => goTab('biblia')}>
                   <div className="pillar-icon teal">📖</div>
@@ -1000,6 +1024,19 @@ export default function Home() {
         .today-greeting { margin-bottom: 24px; }
         .today-day { font-family: 'Playfair Display', Georgia, serif; font-size: 2.1rem; line-height: 1.1; margin-bottom: 4px; }
         .today-sub { font-size: 0.84rem; color: var(--fg-muted); }
+
+        /* SOBRIEDADE */
+        .sobriety-card {
+          background: linear-gradient(135deg, rgba(167,139,250,.12) 0%, rgba(64,212,180,.08) 100%);
+          border: 1px solid rgba(167,139,250,.35);
+          border-radius: 18px; padding: 24px 20px;
+          text-align: center; margin-bottom: 20px;
+        }
+        .sobriety-label { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--violet); margin-bottom: 8px; }
+        .sobriety-count { font-family: 'Playfair Display', Georgia, serif; font-size: 4.5rem; line-height: 1; color: var(--fg); font-weight: 700; }
+        .sobriety-unit { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--fg-muted); margin-top: 2px; margin-bottom: 10px; }
+        .sobriety-detail { font-size: .9rem; color: var(--teal); font-weight: 500; margin-bottom: 4px; }
+        .sobriety-since { font-size: .72rem; color: var(--fg-dim); }
 
         /* MUSIC LINK */
         .music-link { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface); border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: var(--fg); margin-bottom: 14px; transition: border-color 0.18s; }
